@@ -1,0 +1,68 @@
+---
+- name: Python install
+  hosts: ansibleTest01
+  become: True
+  tasks:
+    - name: 安装依赖包
+      #command: yum -y install gcc zlib-devel 
+      yum:
+        name: "{{ dependPackages }}"
+      vars:
+        dependPackages:
+        - vim
+        - vsftpd
+        - gcc 
+        - zlib-devel 
+        - bzip2-devel 
+        - openssl-devel 
+        - ncurses-devel 
+        - sqlite-devel 
+        - readline-devel 
+        - tk-devel 
+        - gdbm-devel
+        - db4-devel 
+        - libpcap-devel 
+        - xz-devel 
+        - libffi-devel 
+        - glibc-devel 
+        - rpm-build
+
+    - name: 启用vsftpd服务
+      service:
+        name: vsftpd
+        state: restarted
+
+    - name: 开机启用vsftpd服务
+      command: systemctl enable vsftpd
+
+      #command:  wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+        
+    - name: 解压缩
+      command: tar -zxvf Python-3.7.3.tgz
+
+    - name: 安装Python3
+      command: ./Python-3.7.3/configure --prefix=/usr/local/python3
+
+    - name: 编译
+      command: make
+    - name: 编译
+      command: make install
+
+    - name: 创建软链接
+      command: ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3
+
+    - name: 创建软链接
+      command: ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3        
+
+    - name: 解压缩java
+      command: tar -zxvf jdk-8u161-linux-x64.tar.gz -C /
+
+    - name: 设置环境变量
+      shell: echo export JAVA_HOME=/jdk1.8.0_161 >> /etc/profile
+
+    - name: 设置环境变量
+      shell: echo export PATH=$JAVA_HOME/bin:$PATH >> /etc/profile
+
+    - name: 设置环境变量
+      shell: echo export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar >> /etc/profile
+

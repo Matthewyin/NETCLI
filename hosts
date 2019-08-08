@@ -1,0 +1,29 @@
+localhost ansible_connection=local
+
+[ansibleTest]
+ansibleTest01 ansible_host=104.255.237.105  #ansible_ssh_user=root ansible_ssh_pass=default
+
+
+
+[ansibleTest:vars]
+ansible_ssh_user=root
+ansible_ssh_pass=default
+
+
+[netcli_web]
+netcliWeb01 ansible_host=104.255.237.102 #ansible_ssh_user=root ansible_ssh_pass=default
+netcliWeb02 ansible_host=104.255.237.103 #ansible_ssh_user=root ansible_ssh_pass=default
+
+[netcli_web:vars]
+ansible_connection=local
+ansible_ssh_user=root
+ansible_ssh_pass=default
+
+
+[switch]
+BD-LBSW04 ansible_host=104.255.253.4
+
+switch:vars]
+ansible_connection=local
+ansible_ssh_user=cslc
+ansible_ssh_pass=cslc@123
