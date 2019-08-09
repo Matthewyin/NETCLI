@@ -1,0 +1,18 @@
+- name: JAVA Install
+  hosts: ansibleTest01
+  become: True
+  tasks:
+    - name: 解压缩java
+      command: tar -zxvf jdk-8u161-linux-x64.tar.gz -C /
+
+    - name: 创建文件
+      command: touch /javaclasspath
+
+    - name: 设置环境变量
+      shell:
+        echo 'export JAVA_HOME=/jdk1.8.0_161' >> /etc/profile
+    - name: 设置环境变量
+      shell: echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /etc/profile
+
+    - name: 设置环境变量
+      shell: echo 'export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar' >> /etc/profile
