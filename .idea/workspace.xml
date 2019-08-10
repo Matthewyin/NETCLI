@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hosts/动态hosts文件.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hosts/hosts" beforeDir="false" afterPath="$PROJECT_DIR$/hosts/hosts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hosts/hosts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hosts/hosts" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +15,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="netcli" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,7 +114,7 @@
       <updated>1564987808156</updated>
       <workItem from="1564987809662" duration="21784000" />
       <workItem from="1565259771973" duration="450000" />
-      <workItem from="1565260855023" duration="10039000" />
+      <workItem from="1565260855023" duration="13965000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
