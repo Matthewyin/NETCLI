@@ -4,6 +4,7 @@ localhost ansible_connection=local
 ansibleTest01 ansible_host=104.255.237.105  #ansible_ssh_user=root ansible_ssh_pass=default
 
 #ansibleTest01：指被操作主机的别名
+#行为参数：
 #ansible_host：指目标主机IP
 #ansible_port：指目标主机端口
 #也可以使用<ip地址>:<端口号>来替代ansible_host和ansible_port，但不建议
