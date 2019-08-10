@@ -1,5 +1,5 @@
 - name: JAVA Install
-  hosts: ansibleTest01
+  hosts: ansibleTest
   become: True
   tasks:
     - name: 解压缩java
