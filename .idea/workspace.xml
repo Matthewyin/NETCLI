@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hosts/hosts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hosts/hosts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Playbooks/Playbook.md" beforeDir="false" afterPath="$PROJECT_DIR$/Playbooks/Playbook.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hosts/hosts.md" beforeDir="false" afterPath="$PROJECT_DIR$/hosts/hosts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hosts/动态hosts文件.md" beforeDir="false" afterPath="$PROJECT_DIR$/hosts/动态hosts文件.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +42,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -49,7 +52,8 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.YAML" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -115,6 +119,9 @@
       <workItem from="1564987809662" duration="21784000" />
       <workItem from="1565259771973" duration="450000" />
       <workItem from="1565260855023" duration="13965000" />
+      <workItem from="1565484740341" duration="4630000" />
+      <workItem from="1565505895800" duration="355000" />
+      <workItem from="1565506272247" duration="5326000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
