@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/output" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Playbooks/Playbook.md" beforeDir="false" afterPath="$PROJECT_DIR$/Playbooks/Playbook.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note_hosts/hosts.md" beforeDir="false" afterPath="$PROJECT_DIR$/note_hosts/hosts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note_hosts/动态hosts文件.md" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +121,7 @@
       <workItem from="1565260855023" duration="13965000" />
       <workItem from="1565484740341" duration="4630000" />
       <workItem from="1565505895800" duration="355000" />
-      <workItem from="1565506272247" duration="7321000" />
+      <workItem from="1565506272247" duration="9226000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
