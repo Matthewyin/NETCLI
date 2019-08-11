@@ -1,0 +1,5 @@
+---
+package:          
+ - mysql
+ - bash-completion
+ - gcc

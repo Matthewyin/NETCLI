@@ -1,0 +1,15 @@
+---
+- name: Register Test
+  hosts: ansibleTest
+  become: True
+  vars_files:
+    - yumInstall.yml
+  tasks:
+    - name: 显示hostname
+      command: ifconfig ens192
+      register: hostname
+
+    - name: Install yum
+      yum: 
+        name: "{{package}}"
+        state: latest

@@ -44,8 +44,7 @@
       command: ./Python-3.7.3/configure --prefix=/usr/local/python3
 
     - name: 编译
-      command: make
-    - name: 编译
+      command: make 
       command: make install
 
     - name: 创建软链接
@@ -53,3 +52,5 @@
 
     - name: 创建软链接
       command: ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3        
+
+

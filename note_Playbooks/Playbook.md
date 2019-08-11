@@ -80,11 +80,11 @@
   >      dest={{key_file}}  
   >    notify: restart nginx
   >```
-2. 使用var_files区段。将变量保存在一个 ***xxx.yml*** 文件中，通过var_files区段调用。此方法可以用来隔离敏感信息的变量。  
+2. 使用var_files区段。将变量保存在一个 ***xxx.yml*** 文件中，通过vars_files区段调用。此方法可以用来隔离敏感信息的变量。  
    如上例，将vars部分内容保存在keyFile.yml文件中。
 > 示例：
  >```
- > var_filess:  
+ > vars_filess:  
   >  keyFile.yml  
   >tasks:
   > - name: copy TLS key  
