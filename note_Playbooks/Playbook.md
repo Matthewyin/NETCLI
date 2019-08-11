@@ -148,3 +148,19 @@
 > PLAY RECAP *******************************************************************************************************************************************
 > ansibleTest01              : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
+##### 内置变量
+hostvars  
+inventory_hostname  
+groups
+
+#### role
+Ansible中，role是将playbook分割为多个文件的主要机制，role可以看成分配给一台或多台主机的配置与操作的集合。
+##### role基本构成
+每个role都具有一个名字，比如hwAccSw，与hwAccSw role相关的文件都放在role/hwAccSw目录中，这个目录中包含：  
+1. role/hwAccSw/tasks/main.yml——tasks
+2. role/hwAccSw/files——保存需要上传到主机的文件
+3. role/hwAccSw/templates——Jinja2模板文件
+4. role/hwAccSw/handlers/main.yml——handlers
+5. role/hwAccSw/vars/main.yml——不可被覆盖的变量
+6. role/hwAccSw/default/main.yml——可以被覆盖的变量
+7. role/hwAccSw/meta/main.yml——role的从属信息 
