@@ -33,7 +33,7 @@ ansible_ssh_pass=default
 [switch]
 BD-LBSW04 ansible_host=104.255.253.4
 
-switch:vars]
+[switch:vars]
 ansible_connection=local
 ansible_ssh_user=cslc
 ansible_ssh_pass=cslc@123
