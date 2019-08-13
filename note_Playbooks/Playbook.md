@@ -153,6 +153,24 @@ hostvars
 inventory_hostname  
 groups
 
+#### 迭代（with_items）
+ansible默认使用item作为循环迭代变量名。  
+>```
+>  1 ---
+>  2 - name: itemTest
+>  3   hosts: ansibleTest01
+>  4   become: True
+>  5   tasks:
+>  6     - name: 安装依赖包
+>  7       yum:
+>  8         name: '{{ item }}'
+>  9       with_items:
+> 10         - vim
+> 11         - vsftpd
+> 12         - gcc  
+> 13         - mysql 
+>
+
 #### role
 Ansible中，role是将playbook分割为多个文件的主要机制，role可以看成分配给一台或多台主机的配置与操作的集合。
 ##### role基本构成
