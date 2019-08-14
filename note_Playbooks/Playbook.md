@@ -182,3 +182,21 @@ Ansible中，role是将playbook分割为多个文件的主要机制，role可以
 5. role/hwAccSw/vars/main.yml——不可被覆盖的变量
 6. role/hwAccSw/default/main.yml——可以被覆盖的变量
 7. role/hwAccSw/meta/main.yml——role的从属信息 
+
+
+#### task执行顺序
+1. 基于调用的模块生产一个对应的Python脚本
+2. 将这个Python脚本复制到远程服务器
+3. 服务器执行Python脚本
++ 使用task流水线功能，不需要复制Python脚本，使用ssh会话的管道直接执行Python脚本  
+在ansible.cfg文件中
+```
+[default]
+pipelining = True
+```
+#### ansible调用模块步骤
+1. 生产带有参数的独立Python脚本（只限于Python模块）
+2. 将模块复制到服务器
+3. 在服务器上创建一个参数文件（只限于非Python模块）
+4. 在服务器上，以参数文件作为参数调用模块
+5. 解析模块的标准输出
