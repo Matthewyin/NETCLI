@@ -9,8 +9,8 @@
       command: touch /javaclasspath
 
     - name: 设置环境变量
-      shell: 
-         echo 'export JAVA_HOME=/jdk1.8.0_161' >> /etc/profile 
+      shell: echo 'export JAVA_HOME=/jdk1.8.0_161' >> /etc/profile
+
     - name: 设置环境变量
       shell: echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /etc/profile
       
