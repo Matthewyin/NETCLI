@@ -1,12 +1,43 @@
 [all:vars]
-username=hp
-password=hp123
+username=cslc
+password=cslc@123
 
-[switches]
-hp1
-hp2
-hp3
+[netcliSwitch]
+leaf01 ansible_host=172.20.13.149
+leaf02 ansilbe_host=172.20.13.155
+spine01 ansible_host=172.20.11.58
 
-[leaves]
-hp3
-hp4
+[leaf]
+leaf01 ansible_host=172.20.13.149
+leaf02 ansilbe_host=172.20.13.155
+
+[spine]
+spine01 ansilbe_host=172.20.11.58
+
+
+# [switches]
+# hp1
+# hp2
+# hp3
+
+# [leaves]
+# hp3
+# hp4
+
+
+# localhost ansible_connection=local
+#
+
+#
+#
+# [netcliSwitch:vars]
+# ansible_connection=local
+# ansible_ssh_user=cslc
+# ansible_ssh_pass=cslc@123
+#
+#
+#  ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
+#  ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
+#
+#
+#  ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
