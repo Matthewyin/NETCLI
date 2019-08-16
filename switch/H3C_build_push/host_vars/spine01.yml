@@ -1,0 +1,6 @@
+---
+
+hostname: spine01
+management_ip: 172.20.11.58
+username: cslc
+password: cslc@123

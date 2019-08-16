@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="" />
+    <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/switch/H3C_build_push/host_vars/spine01.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +17,13 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="netcli" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +58,11 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/switch" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -117,6 +131,8 @@
       <workItem from="1565484740341" duration="4630000" />
       <workItem from="1565505895800" duration="355000" />
       <workItem from="1565506272247" duration="10692000" />
+      <workItem from="1565572208684" duration="4790000" />
+      <workItem from="1565774343924" duration="5517000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
@@ -139,7 +155,91 @@
       <option name="project" value="LOCAL" />
       <updated>1565538546049</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="增加注释说明">
+      <created>1565659511177</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565659511177</updated>
+    </task>
+    <task id="LOCAL-00005" summary="增加注释说明">
+      <created>1565674302003</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565674302003</updated>
+    </task>
+    <task id="LOCAL-00006" summary="增加注释说明">
+      <created>1565773745656</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565773745656</updated>
+    </task>
+    <task id="LOCAL-00007" summary="新增一层实验室交换机hosts">
+      <created>1565940822841</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1565940822841</updated>
+    </task>
+    <task id="LOCAL-00008" summary="新增一层实验室交换机hosts">
+      <created>1565942745736</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1565942745736</updated>
+    </task>
+    <task id="LOCAL-00009" summary="新增一层实验室交换机hosts">
+      <created>1565943518755</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565943518755</updated>
+    </task>
+    <task id="LOCAL-00010" summary="新增一层实验室交换机hosts">
+      <created>1565946114763</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565946114763</updated>
+    </task>
+    <task id="LOCAL-00011" summary="新增一层实验室交换机hosts">
+      <created>1565946136912</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565946136912</updated>
+    </task>
+    <task id="LOCAL-00012" summary="新增一层实验室交换机hosts">
+      <created>1565946333243</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565946333243</updated>
+    </task>
+    <task id="LOCAL-00013" summary="g更新一层实验室交换机hosts">
+      <created>1565947019591</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565947019591</updated>
+    </task>
+    <task id="LOCAL-00014" summary="更新一层实验室交换机hosts&#10;区分host_vars和group_vars">
+      <created>1565947766205</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1565947766205</updated>
+    </task>
+    <task id="LOCAL-00015" summary="更新一层实验室交换机hosts&#10;区分host_vars和group_vars">
+      <created>1565947871288</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1565947871288</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +261,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="增加注释说明" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加注释说明" />
+    <MESSAGE value="新增一层实验室交换机hosts" />
+    <MESSAGE value="g更新一层实验室交换机hosts" />
+    <MESSAGE value="更新一层实验室交换机hosts&#10;区分host_vars和group_vars" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新一层实验室交换机hosts&#10;区分host_vars和group_vars" />
   </component>
 </project>
