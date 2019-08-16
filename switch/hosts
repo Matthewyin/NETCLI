@@ -1,0 +1,30 @@
+[root@Ansible netcli]# cat hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+localhost ansible_connection=local
+
+[netcliSwitch]
+leaf01 ansible_host=172.20.13.149
+leaf02 ansilbe_host=172.20.13.155
+spine ansible_host=172.20.11.58
+
+
+[netcliSwitch:vars]
+ansible_connection=local
+ansible_ssh_user=cslc
+ansible_ssh_pass=cslc@123
+
+[leaf]
+leaf01 ansible_host=172.20.13.149 ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
+leaf02 ansilbe_host=172.20.13.155 ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
+
+[spine]
+spine ansilbe_host=172.20.11.58 ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
