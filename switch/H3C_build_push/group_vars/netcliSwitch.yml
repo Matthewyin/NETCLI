@@ -1,0 +1,6 @@
+# [netcliSwitch:vars]
+---
+ ansible_connection: local
+ ansible_ssh_user: cslc
+ ansible_ssh_pass: cslc@123
+
