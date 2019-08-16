@@ -14,7 +14,7 @@ localhost ansible_connection=local
 [netcliSwitch]
 leaf01 ansible_host=172.20.13.149
 leaf02 ansilbe_host=172.20.13.155
-spine ansible_host=172.20.11.58
+spine01 ansible_host=172.20.11.58
 
 
 [netcliSwitch:vars]
@@ -27,4 +27,4 @@ leaf01 ansible_host=172.20.13.149 ansible_ssh_user=cslc ansible_ssh_pass=cslc@12
 leaf02 ansilbe_host=172.20.13.155 ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
 
 [spine]
-spine ansilbe_host=172.20.11.58 ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
+spine01 ansilbe_host=172.20.11.58 ansible_ssh_user=cslc ansible_ssh_pass=cslc@123
