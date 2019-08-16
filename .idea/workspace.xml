@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/switch/H3C_build_push/host_vars/spine01.yml" afterDir="false" />
-    </list>
+    <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +47,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/switch/H3C_build_push/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/switch/H3C_build_push/templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/switch" />
     </key>
@@ -133,6 +134,8 @@
       <workItem from="1565506272247" duration="10692000" />
       <workItem from="1565572208684" duration="4790000" />
       <workItem from="1565774343924" duration="5517000" />
+      <workItem from="1565948255640" duration="208000" />
+      <workItem from="1565948631757" duration="1126000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
@@ -239,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565947871288</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="switch_test目录整理">
+      <created>1565949554800</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1565949554801</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +274,7 @@
     <MESSAGE value="新增一层实验室交换机hosts" />
     <MESSAGE value="g更新一层实验室交换机hosts" />
     <MESSAGE value="更新一层实验室交换机hosts&#10;区分host_vars和group_vars" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新一层实验室交换机hosts&#10;区分host_vars和group_vars" />
+    <MESSAGE value="switch_test目录整理" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch_test目录整理" />
   </component>
 </project>
