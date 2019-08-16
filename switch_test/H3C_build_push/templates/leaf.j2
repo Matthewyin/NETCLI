@@ -1,0 +1,54 @@
+
+#
+ sysname {{ hostname }}
+#
+ lldp global enable
+#
+vlan 1
+#
+ stp global enable
+#
+interface M-GigabitEthernet0/0/0
+ ip address {{ management_ip }} 255.255.255.0
+#
+ scheduler logfile size 16
+#
+line class aux
+ user-role network-admin
+#
+line class vty
+ user-role network-operator
+#
+line vty 0 15
+ authentication-mode scheme
+ user-role network-admin
+ user-role network-operator
+ protocol inbound ssh
+#
+ ip route-static 0.0.0.0 0 172.20.13.254
+#
+ ssh server enable
+#
+radius scheme system
+ user-name-format without-domain
+#
+domain system
+#
+ aaa session-limit ftp 16
+ aaa session-limit telnet 16
+ aaa session-limit http 16
+ aaa session-limit ssh 16
+ aaa session-limit https 16
+ domain default enable system
+#
+local-user cslc class manage
+ password hash $h$6$S3v7Fzdxxl7JmYi8$iSqliXNMwBkj+dQVvP66HYYH64GCs3qTz0yOZUNDwKSo9uJSpGTzzEEMvOsLGMY1nN26OW1f0Bv97Xiqff33Ww==
+ service-type ssh http https
+ authorization-attribute user-role network-admin
+ authorization-attribute user-role network-operator
+#
+ netconf soap http enable
+ netconf ssh server enable
+ netconf ssh server port 13372
+#
+return
