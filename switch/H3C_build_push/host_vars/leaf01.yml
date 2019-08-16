@@ -1,0 +1,6 @@
+---
+
+hostname: leaf01
+management_ip: 172.20.13.149
+username: cslc
+password: cslc@123
