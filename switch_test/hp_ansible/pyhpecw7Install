@@ -5,4 +5,4 @@
 5. 安装ncclient: *pip install ncclient*
 6. 下载pyhpecw： *git clone https://github.com/HPENetworking/pyhpecw7.git*
 7. 进入pyhpecw7： *cd pyhpecw7*
-8. 安装pyhpecw7： python setup.py install
+8. 安装pyhpecw7： *python setup.py install*

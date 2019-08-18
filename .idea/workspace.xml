@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/switch_test/hp_ansible/pyhpecw7Install" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/pyhpecw7Install" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/hp_ansible/pyhpecw7Install" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +153,7 @@
       <workItem from="1565948255640" duration="208000" />
       <workItem from="1565948631757" duration="1126000" />
       <workItem from="1566089273575" duration="188000" />
-      <workItem from="1566091056569" duration="5381000" />
+      <workItem from="1566091056569" duration="5626000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
@@ -289,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566093666033</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="teaching install the pyhpecw7 package">
+      <created>1566145764898</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1566145764898</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +324,7 @@
     <MESSAGE value="creat switch vlan yml file" />
     <MESSAGE value="creat switch ansible modules" />
     <MESSAGE value="change directorys" />
-    <option name="LAST_COMMIT_MESSAGE" value="change directorys" />
+    <MESSAGE value="teaching install the pyhpecw7 package" />
+    <option name="LAST_COMMIT_MESSAGE" value="teaching install the pyhpecw7 package" />
   </component>
 </project>
