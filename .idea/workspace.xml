@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/pyhpecw7Install" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/hp_ansible/pyhpecw7Install" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -153,7 +154,8 @@
       <workItem from="1565948255640" duration="208000" />
       <workItem from="1565948631757" duration="1126000" />
       <workItem from="1566089273575" duration="188000" />
-      <workItem from="1566091056569" duration="5626000" />
+      <workItem from="1566091056569" duration="6232000" />
+      <workItem from="1566146687893" duration="426000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
@@ -295,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566145764898</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="teaching install the pyhpecw7 package">
+      <created>1566145963607</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1566145963607</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
