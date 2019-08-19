@@ -34,3 +34,9 @@
 
 pip 10.0.1 from/usr/local/python3/lib/python3.7/site-packages/pip (python 3.7)
 
+
+2. 安装pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+**注意** 使用哪个版本安装pip，就会关联到那个版本的pip。如使用Python3安装，就会安装pip3。
+
