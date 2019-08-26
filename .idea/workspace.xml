@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="" />
+    <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/library/comware_command.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/library/comware_interface.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/library/comware_vlan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/spine01.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/vlan.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +141,7 @@
       <workItem from="1565572208684" duration="4790000" />
       <workItem from="1565774343924" duration="5517000" />
       <workItem from="1565948255640" duration="208000" />
-      <workItem from="1565948631757" duration="1126000" />
+      <workItem from="1565948631757" duration="4477000" />
     </task>
     <task id="LOCAL-00001" summary="增加注释说明">
       <created>1565417826440</created>
