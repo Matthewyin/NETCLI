@@ -1,4 +1,82 @@
-1. 安装Python依赖包
+1. 安装wget, git
+> yum install -y wget git
+2. 设置yum源
+>```
+> wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+> yum clean all
+> yum makecache
+> yum install -y epel-release
+> yum clean all
+> yum makecache
+
+3. 安装setuptools
+>```
+> cd setuptools-41.0.1
+> chmod 777 setup.py
+> python setup.py install
+
+4. 安装pip
+> easy_install pip
+> (卸载pip方法：python -m pip uninstall pip)
+
+5. 安装pyhpecw7
+>```
+> 下载pyhpecw7： git clone https://github.com/HPENetworking/pyhpecw7.git
+> Best match: paramiko 2.6.0
+> Processing paramiko-2.6.0-py2.py3-none-any.whl
+> 
+> Best match: ipaddr 2.2.0
+> Processing ipaddr-2.2.0.tar.gz
+> 
+> Best match: scp 0.13.2
+> Processing scp-0.13.2-py2.py3-none-any.whl
+> 
+> Best match: ncclient 0.6.6
+> Processing ncclient-0.6.6.tar.gz
+> 
+> Best match: lxml 4.2.3
+> Processing lxml-4.2.3-cp27-cp27mu-manylinux1_x86_64.whl
+> 
+> Best match: gtextfsm 0.2.1
+> Processing gtextfsm-0.2.1.tar.gz
+> 
+> Best match: PyNaCl 1.3.0
+> Processing PyNaCl-1.3.0-cp27-cp27mu-manylinux1_x86_64.whl
+> 
+> Best match: cryptography 2.7
+> Processing cryptography-2.7-cp27-cp27mu-manylinux1_x86_64.whl
+> 
+> Best match: bcrypt 3.1.7
+> Processing bcrypt-3.1.7-cp27-cp27mu-manylinux1_x86_64.whl
+> 
+> Best match: selectors2 2.0.1
+> Processing selectors2-2.0.1-py2.py3-none-any.whl
+> 
+> Best match: six 1.12.0
+> Processing six-1.12.0-py2.py3-none-any.whl
+> 
+> Best match: cffi 1.12.3
+> Processing cffi-1.12.3-cp27-cp27mu-manylinux1_x86_64.whl
+> 
+> Best match: ipaddress 1.0.22
+> Processing ipaddress-1.0.22-py2.py3-none-any.whl
+> 
+> Best match: enum34 1.1.6
+> Processing enum34-1.1.6-py2-none-any.whl
+> 
+> Best match: asn1crypto 0.24.0
+> Processing asn1crypto-0.24.0-py2.py3-none-any.whl
+> 
+> Best match: pycparser 2.19
+> Processing pycparser-2.19.tar.gz
+> 
+> Best match: setuptools 41.2.0
+> Adding setuptools 41.2.0 to easy-install.pth file
+
+
+
+
+3. 安装Python依赖包
 >```
 >[root@Ansible ~]# [root@netc2c ~]# yum -y install gcczlib-devel bzip2-devel \
 > >  openssl-devel ncurses-devel sqlite-devel \
