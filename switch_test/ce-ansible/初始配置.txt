@@ -1,0 +1,198 @@
+<HUAWEI>dis cu
+!Software Version V200R002C50SPC800
+!Last configuration was updated at 2019-09-03 15:22:01+00:00 by admin123
+!Last configuration was saved at 2019-09-03 15:22:29+00:00 by admin123
+#
+sysname HUAWEI
+#
+system resource standard
+#
+device board 1 board-type CE6855-48S6Q-HI
+#
+drop-profile default
+#
+dcb pfc
+#
+dcb ets-profile default
+#
+vlan batch 300
+#
+dhcp enable
+#
+telnet ipv6 server disable
+#
+diffserv domain default
+#               
+aaa
+ local-user admin123 password irreversible-cipher $1c$&`bfBGdLMA$yC']C@GTK7V;1(,&m;.:;se0P"Gca;7$:vF+I6TF$
+ local-user admin123 service-type telnet ssh
+ local-user admin123 level 3
+ #
+ authentication-scheme default
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default
+ #
+ domain default
+ #
+ domain default_admin
+#
+stack
+#
+interface MEth0/0/0
+ ip address 172.20.13.30 255.255.255.0
+#
+interface Eth-Trunk100
+ mode lacp-static
+#               
+interface 10GE1/0/1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/2
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/3
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/4
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/5
+#
+interface 10GE1/0/6
+#
+interface 10GE1/0/7
+#
+interface 10GE1/0/8
+#
+interface 10GE1/0/9
+#
+interface 10GE1/0/10
+#
+interface 10GE1/0/11
+#
+interface 10GE1/0/12
+#
+interface 10GE1/0/13
+#
+interface 10GE1/0/14
+#
+interface 10GE1/0/15
+#
+interface 10GE1/0/16
+#
+interface 10GE1/0/17
+#
+interface 10GE1/0/18
+#
+interface 10GE1/0/19
+#
+interface 10GE1/0/20
+#
+interface 10GE1/0/21
+#               
+interface 10GE1/0/22
+#
+interface 10GE1/0/23
+#
+interface 10GE1/0/24
+ eth-trunk 100
+#
+interface 10GE1/0/25
+ eth-trunk 100
+#
+interface 10GE1/0/26
+#
+interface 10GE1/0/27
+#
+interface 10GE1/0/28
+#
+interface 10GE1/0/29
+#
+interface 10GE1/0/30
+#
+interface 10GE1/0/31
+#
+interface 10GE1/0/32
+#
+interface 10GE1/0/33
+#
+interface 10GE1/0/34
+#
+interface 10GE1/0/35
+#
+interface 10GE1/0/36
+#
+interface 10GE1/0/37
+#
+interface 10GE1/0/38
+#
+interface 10GE1/0/39
+#
+interface 10GE1/0/40
+#
+interface 10GE1/0/41
+#
+interface 10GE1/0/42
+#
+interface 10GE1/0/43
+#               
+interface 10GE1/0/44
+#
+interface 10GE1/0/45
+#
+interface 10GE1/0/46
+#
+interface 10GE1/0/47
+#
+interface 10GE1/0/48
+#
+interface 40GE1/0/1
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE1/0/2
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE1/0/3
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE1/0/4
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE1/0/5
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE1/0/6
+ device transceiver 40GBASE-FIBER
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 172.20.13.254
+#
+stelnet ipv4 server enable
+snetconf ipv4 server enable
+stelnet ipv6 server enable
+snetconf ipv6 server enable
+ssh authentication-type default password
+ssh user admin123
+ssh user admin123 authentication-type password
+ssh user admin123 service-type all
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256_96 sha2_256 sha1_96
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521 sm2_kep
+#               
+user-interface con 0
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+#
+netconf
+ protocol inbound ssh ipv4 port 830
+#
+vm-manager
+#
+return
