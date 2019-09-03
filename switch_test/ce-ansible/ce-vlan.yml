@@ -1,0 +1,21 @@
+---
+
+- name: eth_trunk module test
+  hosts: netcli 
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      transport: cli
+
+  tasks:
+  - name: Ensure Eth-Trunk100 is created, add two members, and set to mode lacp-static
+    ce_eth_trunk:
+      trunk_id: 100
+      members: ['10GE1/0/24', '10GE1/0/25']
+      mode: 'lacp-static'
+      state: present
+      provider: '{{ cli }}'

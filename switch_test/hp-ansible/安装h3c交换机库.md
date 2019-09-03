@@ -9,17 +9,39 @@
 > yum clean all
 > yum makecache
 
-3. 安装setuptools
+3. 安装ansible
+>```
+> yum install –y ansible
+验证
+>```
+> [root@Ansible ~]# ansible –version
+> 
+> ansible 2.8.2
+> 
+>   config file = /etc/ansible/ansible.cfg
+> 
+>   configured module search path =[u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+> 
+>   ansible python module location =/usr/lib/python2.7/site-packages/ansible
+> 
+>   executable location = /usr/local/bin/ansible
+> 
+>   python version = 2.7.5 (default, Jun 20 2019,20:27:34) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+> 
+ 
+
+4. 安装setuptools
 >```
 > cd setuptools-41.0.1
 > chmod 777 setup.py
 > python setup.py install
 
-4. 安装pip
-> easy_install pip
+5. 安装pip
+> 方法1：python get-pip.py pip==18.0
+> 方法2：easy_install pip
 > (卸载pip方法：python -m pip uninstall pip)
 
-5. 安装pyhpecw7
+6. 安装pyhpecw7
 >```
 > 下载pyhpecw7： git clone https://github.com/HPENetworking/pyhpecw7.git
 > Best match: paramiko 2.6.0
@@ -31,7 +53,7 @@
 > Best match: scp 0.13.2
 > Processing scp-0.13.2-py2.py3-none-any.whl
 > 
-> Best match: ncclient 0.6.6
+> Best match: ncclient（0.5.3)） 0.6.6
 > Processing ncclient-0.6.6.tar.gz
 > 
 > Best match: lxml 4.2.3
@@ -74,48 +96,7 @@
 > Adding setuptools 41.2.0 to easy-install.pth file
 
 
-
-
-3. 安装Python依赖包
->```
->[root@Ansible ~]# [root@netc2c ~]# yum -y install gcczlib-devel bzip2-devel \
-> >  openssl-devel ncurses-devel sqlite-devel \
-> >  readline-develtk-devel gdbm-devel db4-devel libpcap-devel \
-> >  xz-devel libffi-devel glibc-develrpm-build openssl-devel
->```
-
-2. 安装pip
->```
-> [root@Ansible ~]#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-> [root@Ansible ~]#python get-pip.py
-> [root@Ansible ~]#pip install --upgrade pip
-> [root@Ansible ~]#pip -V
-> pip 19.2.2 from /ansibleTest/lib/python2.7/site-packages/pip (python 2.7)
-**注意** 使用哪个版本安装pip，就会关联到那个版本的pip。如使用Python3安装，就会安装pip3。
-
-
-3. 安装ansible
->```
->yum install –y ansible
-验证
->```
-> [root@Ansible ~]# ansible –version
-> 
-> ansible 2.8.2
-> 
->   config file = /etc/ansible/ansible.cfg
-> 
->   configured module search path =[u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
-> 
->   ansible python module location =/usr/lib/python2.7/site-packages/ansible
-> 
->   executable location = /usr/local/bin/ansible
-> 
->   python version = 2.7.5 (default, Jun 20 2019,20:27:34) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
-> 
- 
-
-4. 安装独立的Python虚拟化环境
+7. 安装独立的Python虚拟化环境
 
 Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多环境并存。
 >```
@@ -133,7 +114,7 @@ Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多�
 
  
 
-5. 创建虚拟化将目录
+8. 创建虚拟化将目录
 >```
 > virtualenv /testPython3/ansible
 > 
@@ -142,7 +123,7 @@ Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多�
 > (ansible) [root@Ansible ~]#
  
 
-6. Ansible主要目录及文件
+9. Ansible主要目录及文件
 >```
 > 配置文件：/etc/ansible/ansible.cfg，包含inventory主机信息配置、ansible工具功能配置
 > 
