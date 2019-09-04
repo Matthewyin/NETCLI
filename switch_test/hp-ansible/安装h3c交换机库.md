@@ -41,101 +41,10 @@
 > 方法2：easy_install pip
 > (卸载pip方法：python -m pip uninstall pip)
 
-6. 安装pyhpecw7
+6. 安装pyhpecw7(***含运行pyhpecw7所需的python库***）
 >```
-> 下载pyhpecw7： git clone https://github.com/HPENetworking/pyhpecw7.git
-> Best match: paramiko 2.6.0
-> Processing paramiko-2.6.0-py2.py3-none-any.whl
+> easy_install pyhpecw7
 > 
-> Best match: ipaddr 2.2.0
-> Processing ipaddr-2.2.0.tar.gz
-> 
-> Best match: scp 0.13.2
-> Processing scp-0.13.2-py2.py3-none-any.whl
-> 
-> Best match: ncclient（0.5.3)） 0.6.6
-> Processing ncclient-0.6.6.tar.gz
-> 
-> Best match: lxml 4.2.3
-> Processing lxml-4.2.3-cp27-cp27mu-manylinux1_x86_64.whl
-> 
-> Best match: gtextfsm 0.2.1
-> Processing gtextfsm-0.2.1.tar.gz
-> 
-> Best match: PyNaCl 1.3.0
-> Processing PyNaCl-1.3.0-cp27-cp27mu-manylinux1_x86_64.whl
-> 
-> Best match: cryptography 2.7
-> Processing cryptography-2.7-cp27-cp27mu-manylinux1_x86_64.whl
-> 
-> Best match: bcrypt 3.1.7
-> Processing bcrypt-3.1.7-cp27-cp27mu-manylinux1_x86_64.whl
-> 
-> Best match: selectors2 2.0.1
-> Processing selectors2-2.0.1-py2.py3-none-any.whl
-> 
-> Best match: six 1.12.0
-> Processing six-1.12.0-py2.py3-none-any.whl
-> 
-> Best match: cffi 1.12.3
-> Processing cffi-1.12.3-cp27-cp27mu-manylinux1_x86_64.whl
-> 
-> Best match: ipaddress 1.0.22
-> Processing ipaddress-1.0.22-py2.py3-none-any.whl
-> 
-> Best match: enum34 1.1.6
-> Processing enum34-1.1.6-py2-none-any.whl
-> 
-> Best match: asn1crypto 0.24.0
-> Processing asn1crypto-0.24.0-py2.py3-none-any.whl
-> 
-> Best match: pycparser 2.19
-> Processing pycparser-2.19.tar.gz
-> 
-> Best match: setuptools 41.2.0
-> Adding setuptools 41.2.0 to easy-install.pth file
-
-
-7. 安装独立的Python虚拟化环境
-
-Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多环境并存。
->```
-> [root@Ansible~]# pip install virtualenv
-> 
-> Collectingvirtualenv
-> 
->   Downloadinghttps://files.pythonhosted.org/packages/db/9e/df208b2baad146fe3fbe750eacadd6e49bcf2f2c3c1117b7192a7b28aec4/virtualenv-16.7.2-py2.py3-none-any.whl(3.3MB)
-> 
->      |████████████████████████████████| 3.3MB 65kB/s
-> 
-> Installingcollected packages: virtualenv
-> 
-> Successfully installed virtualenv-16.7.2
-
- 
-
-8. 创建虚拟化将目录
->```
-> virtualenv /testPython3/ansible
-> 
-> source /testPython3/ansible/bin/activate
-> 
-> (ansible) [root@Ansible ~]#
- 
-
-9. Ansible主要目录及文件
->```
-> 配置文件：/etc/ansible/ansible.cfg，包含inventory主机信息配置、ansible工具功能配置
-> 
-> 执行文件目录：/usr/bin/，ansible所有的可执行命令所在的目录。
-> 
-> 内置的lib库文件：/usr/lib/python2.7/site-packages/
-> 
-> Man文档目录：/usr/share/man/man1
-
-
-10. 运行pyhpecw7所需的python库
->```
 > ansible                      2.8.4  
 > Babel                        0.9.6  
 > backports.ssl-match-hostname 3.5.0.1
@@ -185,3 +94,41 @@ Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多�
 > urlgrabber                   3.10   
 > yum-langpacks                0.4.2  
 > yum-metadata-parser          1.1.4
+
+7. 安装独立的Python虚拟化环境(可选)
+
+Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多环境并存。
+>```
+> [root@Ansible~]# pip install virtualenv
+> 
+> Collectingvirtualenv
+> 
+>   Downloadinghttps://files.pythonhosted.org/packages/db/9e/df208b2baad146fe3fbe750eacadd6e49bcf2f2c3c1117b7192a7b28aec4/virtualenv-16.7.2-py2.py3-none-any.whl(3.3MB)
+> 
+>      |████████████████████████████████| 3.3MB 65kB/s
+> 
+> Installingcollected packages: virtualenv
+> 
+> Successfully installed virtualenv-16.7.2
+
+ 
+
+8. 创建虚拟化将目录（可选）
+>```
+> virtualenv /testPython3/ansible
+> 
+> source /testPython3/ansible/bin/activate
+> 
+> (ansible) [root@Ansible ~]#
+ 
+
+9. Ansible主要目录及文件
+>```
+> 配置文件：/etc/ansible/ansible.cfg，包含inventory主机信息配置、ansible工具功能配置
+> 
+> 执行文件目录：/usr/bin/，ansible所有的可执行命令所在的目录。
+> 
+> 内置的lib库文件：/usr/lib/python2.7/site-packages/
+> 
+> Man文档目录：/usr/share/man/man1
+
