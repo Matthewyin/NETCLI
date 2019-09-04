@@ -37,7 +37,7 @@
 > python setup.py install
 
 5. 安装pip
-> 方法1：python get-pip.py pip==18.0
+> 方法1：python get-pip.py
 > 方法2：easy_install pip
 > (卸载pip方法：python -m pip uninstall pip)
 
@@ -132,3 +132,56 @@ Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多�
 > 内置的lib库文件：/usr/lib/python2.7/site-packages/
 > 
 > Man文档目录：/usr/share/man/man1
+
+
+10. 运行pyhpecw7所需的python库
+>```
+> ansible                      2.8.4  
+> Babel                        0.9.6  
+> backports.ssl-match-hostname 3.5.0.1
+> cffi                         1.6.0  
+> chardet                      2.2.1  
+> configobj                    4.7.2  
+> cryptography                 1.7.2  
+> decorator                    3.4.0  
+> enum34                       1.0.4  
+> gtextfsm                     0.2.1  
+> httplib2                     0.9.2  
+> idna                         2.4    
+> iniparse                     0.4    
+> ipaddr                       2.2.0  
+> ipaddress                    1.0.16 
+> Jinja2                       2.7.2  
+> jmespath                     0.9.0  
+> kitchen                      1.1.1  
+> langtable                    0.0.31 
+> lxml                         4.4.1  
+> MarkupSafe                   0.11   
+> ncclient                     0.6.6  
+> paramiko                     2.1.1  
+> perf                         0.1    
+> pip                          18.0   
+> ply                          3.4    
+> pyasn1                       0.1.9  
+> pycparser                    2.14   
+> pycurl                       7.19.0 
+> pygobject                    3.22.0 
+> pygpgme                      0.3    
+> pyhpecw7                     0.0.11 
+> pyliblzma                    0.5.3  
+> python-augeas                0.5.0  
+> python-dmidecode             3.10.13
+> python-linux-procfs          0.4.9  
+> pyudev                       0.15   
+> pyxattr                      0.5.1  
+> PyYAML                       3.10   
+> schedutils                   0.4    
+> scp                          0.13.2 
+> selectors2                   2.0.1  
+> setuptools                   41.0.1 
+> six                          1.9.0  
+> slip                         0.4.0  
+> slip.dbus                    0.4.0  
+> urlgrabber                   3.10   
+> yum-langpacks                0.4.2  
+> yum-metadata-parser          1.1.4
