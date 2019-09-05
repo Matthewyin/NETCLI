@@ -94,6 +94,21 @@
 > yum-langpacks                0.4.2  
 > yum-metadata-parser          1.1.4
 
+7. 修改namespaces.py文件
+>vim /usr/lib/python2.7/site-packages/pyhpecw7-0.0.11-py2.7.egg/pyhpecw7/utils/xml/namespaces.py
+>```
+> HPDATA = 'http://www.h3c.com/netconf/data:1.0'
+> HPDATA_C = '{' + HPDATA + '}'
+> 
+> NETCONFBASE = "urn:ietf:params:xml:ns:netconf:base:1.0"
+> NETCONFBASE_C = '{' + NETCONFBASE + '}'
+> 
+> HPCONFIG = "http://www.h3c.com/netconf/config:1.0"
+> HPCONFIG_C = '{' + HPCONFIG + '}'
+> 
+> HPACTION = "http://www.h3c.com/netconf/action:1.0"
+> HPACTION_C = '{' + HPACTION + '}' 
+
 7. 安装独立的Python虚拟化环境(可选)
 
 Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多环境并存。
