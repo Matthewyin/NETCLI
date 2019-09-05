@@ -79,7 +79,6 @@
 > pyhpecw7                     0.0.11 
 > pyliblzma                    0.5.3  
 > python-augeas                0.5.0  
-> python-dmidecode             3.10.13
 > python-linux-procfs          0.4.9  
 > pyudev                       0.15   
 > pyxattr                      0.5.1  

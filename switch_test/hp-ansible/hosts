@@ -9,23 +9,13 @@
 #   - A hostname/ip can be a member of multiple groups
 
 
+[netcli:vars]
+ ansible_connection=local
+ ansible_ssh_user=cslc
+ ansible_ssh_pass=cslc@123
 
-[netcliSwitch]
+
+[netcli]
 leaf01 ansible_host=172.20.13.149
-leaf02 ansilbe_host=172.20.13.155
-spine01 ansible_host=172.20.11.58
-
-#[netcliSwitch:vars]
-# ansible_connection=local
-# ansible_ssh_user=cslc
-# ansible_ssh_pass=cslc@123
-
-
-[leaf]
-leaf01 ansible_host=172.20.13.149
-leaf02 ansilbe_host=172.20.13.155
-
-[spine]
-spine01 ansilbe_host=172.20.11.58
 
 
