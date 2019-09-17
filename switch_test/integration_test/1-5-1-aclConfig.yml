@@ -1,208 +1,41 @@
 ---
 
-- name: cloudengine acl module test
-  hosts: cloudengine
+- name: 1-5-1-aclConfig：创建访问控制列表
+  hosts: gateway
   connection: local
   gather_facts: no
   vars:
     cli:
-      host: "{{ inventory_hostname }}"
+      host: "{{ ansible_ssh_host }}"
       port: "{{ ansible_ssh_port }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
       transport: cli
 
   tasks:
 
-# normal argument test
+    #创建标准ACL，序号2001,允许192.168.1.0/24访问
+    - name: '创建并配置标准ACL，允许192.168.1.0/24访问'
+      ce_acl:
+        state: present
+        acl_name: '2001'
+        rule_action: permit
+        acl_step: '8'
+        source_ip: '192.168.1.0'
+        src_mask: '24'
+        provider: "{{ cli }}"
 
-  - name: "rollback"
-    ce_config: lines='return,rollback configuration to label ansible_test' match=none provider="{{ cli }}"
-    register: data
-    ignore_errors: false
-
-  - name: "undo acl"
-    ce_acl: state=delete_acl acl_name=2200 provider="{{ cli }}"
-    register: data
-
-  - name: "config acl"
-    ce_acl: state=present acl_name=2200 provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 1"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "undo acl"
-    ce_acl: state=delete_acl acl_name=2200 provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 2"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "undo acl"
-    ce_acl: state=delete_acl acl_name=wdz_basic provider="{{ cli }}"
-    register: data
-
-  - name: "config acl"
-    ce_acl: state=present acl_name=wdz_basic provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 3"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "undo acl"
-    ce_acl: state=delete_acl acl_name=wdz_basic provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 4"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "config acl"
-    ce_acl: state=present acl_name=wdz_basic acl_step=10 acl_num=2200 acl_description=wangdezhuang provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 5"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "undo acl"
-    ce_acl: state=delete_acl acl_name=wdz_basic provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 6"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "config acl base rule"
-    ce_acl: state=present acl_name=wdz_basic rule_name=wdz_basic_rule rule_id=111 rule_action=permit source_ip=10.10.10.10 src_mask=24 frag_type=fragment provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 7"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "undo acl base rule"
-    ce_acl: state=delete_acl acl_name=wdz_basic rule_name=wdz_basic_rule provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 8"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "config acl base rule"
-    ce_acl: state=present acl_name=wdz_basic acl_description=wdz_basic_acl rule_name=wdz_basic_rule rule_id=111 rule_action=permit source_ip=10.10.10.10 src_mask=24 frag_type=fragment provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 9"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "undo acl base rule"
-    ce_acl: state=absent acl_name=wdz_basic rule_name=wdz_basic_rule rule_id=111 rule_action=permit provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 10"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "undo acl"
-    ce_acl: state=delete_acl acl_name=wdz_basic provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 11"
-    assert:
-      that:
-        - data.changed == true
-
-  - name: "abnormal para"
-    ce_acl: state=present acl_name=30006 provider="{{ cli }}"
-    register: data
-    ignore_errors: true
-
-  - name: "TEST 12"
-    assert:
-      that:
-        - data | failed
-
-  - name: "abnormal para"
-    ce_acl: state=present acl_name=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa provider="{{ cli }}"
-    register: data
-    ignore_errors: true
-
-  - name: "TEST 13"
-    assert:
-      that:
-        - data | failed
-
-  - name: "config acl"
-    ce_acl: state=present acl_name=wdz_basic acl_step=30 acl_num=2200 acl_description=wangdezhuang provider="{{ cli }}"
-    register: data
-    ignore_errors: true
-
-  - name: "TEST 14"
-    assert:
-      that:
-        - data | failed
-
-  - name: "config acl"
-    ce_acl: state=present acl_name=wdz_basic acl_step=30 acl_num=2200 acl_description='' provider="{{ cli }}"
-    register: data
-    ignore_errors: true
-
-  - name: "TEST 15"
-    assert:
-      that:
-        - data | failed
-
-  - name: "config acl base rule"
-    ce_acl: state=present acl_name=wdz_basic acl_description=wdz_basic_acl rule_name=wdz_basic_rule rule_id=-23 rule_action=permit source_ip=10.10.10.10 src_mask=24 frag_type=fragment provider="{{ cli }}"
-    register: data
-    ignore_errors: true
-
-  - name: "TEST 16"
-    assert:
-      that:
-        - data | failed
-
-  - name: "config acl base rule"
-    ce_acl: state=present acl_name=wdz_basic acl_description=wdz_basic_acl rule_name=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa rule_id=111 rule_action=permit source_ip=10.10.10.10 src_mask=24 frag_type=fragment provider="{{ cli }}"
-    register: data
-    ignore_errors: true
-
-  - name: "TEST 17"
-    assert:
-      that:
-        - data | failed
-
-  - name: "config acl base rule"
-    ce_acl: state=present acl_name=wdz_basic acl_description=wdz_basic_acl rule_name=aaaaa rule_id=111 rule_action=permit source_ip=10.10.10 src_mask=24 frag_type=fragment provider="{{ cli }}"
-    register: data
-    ignore_errors: true
-
-  - name: "TEST 18"
-    assert:
-      that:
-        - data | failed
-
-  - name: "undo acl"
-    ce_acl: state=delete_acl acl_name=wdz_basic provider="{{ cli }}"
-    register: data
-
-  - name: "TEST 19"
-    assert:
-      that:
-        - data.changed == true
+    #创建高级ACL，name：to_webServer,允许外部用户访问192.168.0.10:443
+    - name: '创建并配置高级ACL，允许外部用户访问web服务器的443端口'
+      ce_acl_advance:
+        state:  present
+        acl_name: 'to_webServer'
+        rule_name:  'test_rule'
+        rule_id:  '110'
+        rule_action:  permit
+        protocol:  tcp
+        dest_ip: '192.168.0.10'
+        dest_mask: '32'
+        dest_port_op: eq
+        dest_port_begin: '443'
+        provider: "{{ cli }}"
