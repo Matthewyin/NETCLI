@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>1-5-1-aclConfig.yml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #9876aa;}
+.s3 { color: #cc7832;}
+.s4 { color: #a9b7c6;}
+.s5 { color: #808080;}
+.s6 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+1-5-1-aclConfig.yml</font>
+</center></td></tr></table>
+<pre><span class="s0">---</span>
+
+<span class="s1">- </span><span class="s2">name</span><span class="s1">: 1-5-1-aclConfig：创建访问控制列表</span>
+  <span class="s2">hosts</span><span class="s1">: gateway</span>
+  <span class="s2">connection</span><span class="s1">: local</span>
+  <span class="s2">gather_facts</span><span class="s1">: </span><span class="s3">no</span>
+  <span class="s2">vars</span><span class="s1">:</span>
+    <span class="s2">cli</span><span class="s1">:</span>
+      <span class="s2">host</span><span class="s1">: &quot;</span><span class="s4">{{ </span><span class="s1">ansible_ssh_host </span><span class="s4">}}</span><span class="s1">&quot;</span>
+      <span class="s2">port</span><span class="s1">: &quot;</span><span class="s4">{{ </span><span class="s1">ansible_ssh_port </span><span class="s4">}}</span><span class="s1">&quot;</span>
+      <span class="s2">username</span><span class="s1">: &quot;</span><span class="s4">{{ </span><span class="s1">ansible_user </span><span class="s4">}}</span><span class="s1">&quot;</span>
+      <span class="s2">password</span><span class="s1">: &quot;</span><span class="s4">{{ </span><span class="s1">ansible_password </span><span class="s4">}}</span><span class="s1">&quot;</span>
+      <span class="s2">transport</span><span class="s1">: cli</span>
+
+  <span class="s2">tasks</span><span class="s1">:</span>
+
+    <span class="s5">#创建高级ACL，name: to_webServer,允许外部用户访问192.168.0.10:443</span>
+    <span class="s1">- </span><span class="s2">name</span><span class="s1">: </span><span class="s6">'创建并配置高级ACL，允许外部用户访问web服务器的443端口'</span>
+      <span class="s2">ce_acl_advance</span><span class="s1">:</span>
+        <span class="s2">state</span><span class="s1">:  present</span>
+        <span class="s2">acl_name</span><span class="s1">: </span><span class="s6">'to_webServer'</span>
+        <span class="s2">acl_step</span><span class="s1">: </span><span class="s6">'8'</span>
+        <span class="s2">rule_name</span><span class="s1">: </span><span class="s6">'to_ssl'</span>
+        <span class="s2">rule_id</span><span class="s1">:  </span><span class="s6">'110'</span>
+        <span class="s2">rule_action</span><span class="s1">:  permit</span>
+        <span class="s2">protocol</span><span class="s1">:  tcp</span>
+        <span class="s2">dest_ip</span><span class="s1">: </span><span class="s6">'192.168.0.10'</span>
+        <span class="s2">dest_mask</span><span class="s1">: </span><span class="s6">'32'</span>
+        <span class="s2">dest_port_op</span><span class="s1">: eq</span>
+        <span class="s2">dest_port_begin</span><span class="s1">: </span><span class="s6">'443'</span>
+        <span class="s2">provider</span><span class="s1">: &quot;</span><span class="s4">{{ </span><span class="s1">cli </span><span class="s4">}}</span><span class="s1">&quot;</span>
+
+
+    <span class="s5">#创建高级ACL，name：to_appServer,允许web01和web02访问192.168.2.11:8080</span>
+    <span class="s1">- </span><span class="s2">name</span><span class="s1">: </span><span class="s6">'创建并配置高级ACL，允许web01和web02访问192.168.2.11:8080'</span>
+      <span class="s2">ce_acl_advance</span><span class="s1">:</span>
+        <span class="s2">state</span><span class="s1">:  present</span>
+        <span class="s2">acl_name</span><span class="s1">: </span><span class="s6">'to_appServer'</span>
+        <span class="s2">acl_step</span><span class="s1">: </span><span class="s6">'8'</span>
+        <span class="s2">rule_name</span><span class="s1">: </span><span class="s6">'to_tomcat'</span>
+        <span class="s2">rule_id</span><span class="s1">:  </span><span class="s6">'110'</span>
+        <span class="s2">rule_action</span><span class="s1">:  permit</span>
+        <span class="s2">protocol</span><span class="s1">:  tcp</span>
+        <span class="s2">source_ip</span><span class="s1">: </span><span class="s6">'192.168.1.11'</span>
+        <span class="s2">src_mask</span><span class="s1">: </span><span class="s6">'32'</span>
+        <span class="s2">dest_ip</span><span class="s1">: </span><span class="s6">'192.168.2.11'</span>
+        <span class="s2">dest_mask</span><span class="s1">: </span><span class="s6">'32'</span>
+        <span class="s2">dest_port_op</span><span class="s1">: eq</span>
+        <span class="s2">dest_port_begin</span><span class="s1">: </span><span class="s6">'8080'</span>
+        <span class="s2">provider</span><span class="s1">: &quot;</span><span class="s4">{{ </span><span class="s1">cli </span><span class="s4">}}</span><span class="s1">&quot;</span>
+
+    <span class="s1">- </span><span class="s2">name</span><span class="s1">: </span><span class="s6">'创建并配置高级ACL，允许web02问192.168.2.11:8080'</span>
+      <span class="s2">ce_acl_advance</span><span class="s1">:</span>
+        <span class="s2">state</span><span class="s1">:  present</span>
+        <span class="s2">acl_name</span><span class="s1">: </span><span class="s6">'to_appServer'</span>
+        <span class="s2">acl_step</span><span class="s1">: </span><span class="s6">'8'</span>
+        <span class="s2">rule_name</span><span class="s1">: </span><span class="s6">'web02_to_tomcat'</span>
+        <span class="s2">rule_id</span><span class="s1">:  </span><span class="s6">'111'</span>
+        <span class="s2">rule_action</span><span class="s1">:  permit</span>
+        <span class="s2">protocol</span><span class="s1">:  tcp</span>
+        <span class="s2">source_ip</span><span class="s1">: </span><span class="s6">'192.168.1.12'</span>
+        <span class="s2">src_mask</span><span class="s1">: </span><span class="s6">'32'</span>
+        <span class="s2">dest_ip</span><span class="s1">: </span><span class="s6">'192.168.2.11'</span>
+        <span class="s2">dest_mask</span><span class="s1">: </span><span class="s6">'32'</span>
+        <span class="s2">dest_port_op</span><span class="s1">: eq</span>
+        <span class="s2">dest_port_begin</span><span class="s1">: </span><span class="s6">'8080'</span>
+        <span class="s2">provider</span><span class="s1">: &quot;</span><span class="s4">{{ </span><span class="s1">cli </span><span class="s4">}}</span><span class="s1">&quot;</span></pre>
+</body>
+</html>
