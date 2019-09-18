@@ -14,23 +14,13 @@
 
   tasks:
 
-    #创建标准ACL，序号2001,允许192.168.1.0/24访问
-    - name: '创建并配置标准ACL，允许192.168.1.0/24访问'
-      ce_acl:
-        state: present
-        acl_name: '2001'
-        rule_action: permit
-        acl_step: '8'
-        source_ip: '192.168.1.0'
-        src_mask: '24'
-        provider: "{{ cli }}"
-
-    #创建高级ACL，name：to_webServer,允许外部用户访问192.168.0.10:443
+    #创建高级ACL，name: to_webServer,允许外部用户访问192.168.0.10:443
     - name: '创建并配置高级ACL，允许外部用户访问web服务器的443端口'
       ce_acl_advance:
         state:  present
         acl_name: 'to_webServer'
-        rule_name:  'test_rule'
+        acl_step: '8'
+        rule_name: 'to_ssl'
         rule_id:  '110'
         rule_action:  permit
         protocol:  tcp
@@ -38,4 +28,40 @@
         dest_mask: '32'
         dest_port_op: eq
         dest_port_begin: '443'
+        provider: "{{ cli }}"
+
+
+    #创建高级ACL，name：to_appServer,允许web01和web02访问192.168.2.11:8080
+    - name: '创建并配置高级ACL，允许web01和web02访问192.168.2.11:8080'
+      ce_acl_advance:
+        state:  present
+        acl_name: 'to_appServer'
+        acl_step: '8'
+        rule_name: 'to_tomcat'
+        rule_id:  '110'
+        rule_action:  permit
+        protocol:  tcp
+        source_ip: '192.168.1.11'
+        src_mask: '32'
+        dest_ip: '192.168.2.11'
+        dest_mask: '32'
+        dest_port_op: eq
+        dest_port_begin: '8080'
+        provider: "{{ cli }}"
+
+    - name: '创建并配置高级ACL，允许web02问192.168.2.11:8080'
+      ce_acl_advance:
+        state:  present
+        acl_name: 'to_appServer'
+        acl_step: '8'
+        rule_name: 'web02_to_tomcat'
+        rule_id:  '111'
+        rule_action:  permit
+        protocol:  tcp
+        source_ip: '192.168.1.12'
+        src_mask: '32'
+        dest_ip: '192.168.2.11'
+        dest_mask: '32'
+        dest_port_op: eq
+        dest_port_begin: '8080'
         provider: "{{ cli }}"
