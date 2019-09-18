@@ -1,0 +1,21 @@
+---
+
+- name: 1-1-2-trunkInterface：Gateway与Tor之间trunk互联
+  hosts: gateway
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ ansible_ssh_host }}"
+      port: "{{ ansible_ssh_port }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      transport: cli
+
+  tasks:
+   - name: 配置与Tor互联的40G1/0/1接口为trunk，允许vlan10-12的流量
+     ce_switchport:
+        interface: 40GE1/0/1
+        mode: trunk
+        trunk_vlans: 10-12
+        provider: '{{ cli }}'

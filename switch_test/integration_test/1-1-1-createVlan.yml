@@ -1,3 +1,5 @@
+---
+
 - name: 1-1-1-creatVlan：创建VLAN,SVI接口及IP地址
   hosts: gateway
   connection: local
@@ -10,56 +12,56 @@
       password: "{{ ansible_password }}"
       transport: cli
 
-  task:
+  tasks:
 
-    - name: 创建VLAN10-12
-      ce_vlan:
-        vlan_range: "10-12"
-        state: absent
-        provider: "{{ cli }}"
+  - name: 创建VLAN10-12
+    ce_vlan:
+      vlan_range: "10-12"
+      state: present
+      provider: "{{ cli }}"
 
-    - name: 创建SVI10
-      ce_interface:
-        interface: vlanif10
-        description: 'SLB_SSL GATEWAY'
-        provider: '{{ cli }}'
+  - name: 创建SVI10
+    ce_interface:
+      interface: vlanif10
+      description: 'SLB_SSL GATEWAY'
+      provider: '{{ cli }}'
 
-    - name: 为SVI 10分配IP地址
-      ce_ip_interface:
-        interface:  Vlanif10
-        version: v4
-        state: present
-        addr: 192.168.0.254
-        mask: 24
-        provider: '{{ cli }}'
+  - name: 为SVI 10分配IP地址
+    ce_ip_interface:
+      interface:  Vlanif10
+      version: v4
+      state: present
+      addr: 192.168.0.254
+      mask: '24'
+      provider: '{{ cli }}'
 
 
-    - name: 创建SVI11
-      ce_interface:
-        interface: vlanif11
-        description: 'webServer GATEWAY'
-        provider: '{{ cli }}'
+  - name: 创建SVI11
+    ce_interface:
+      interface: vlanif11
+      description: 'webServer GATEWAY'
+      provider: '{{ cli }}'
 
-    - name: 为SVI 11分配IP地址
-      ce_ip_interface:
-        interface:  Vlanif11
-        version: v4
-        state: present
-        addr: 192.168.1.254
-        mask: 24
-        provider: '{{ cli }}'
+  - name: 为SVI 11分配IP地址
+    ce_ip_interface:
+      interface:  Vlanif11
+      version: v4
+      state: present
+      addr: 192.168.1.254
+      mask: '24'
+      provider: '{{ cli }}'
 
-    - name: 创建SVI12
-      ce_interface:
-        interface: vlanif12
-        description: 'appServer GATEWAY'
-        provider: '{{ cli }}'
+  - name: 创建SVI12
+    ce_interface:
+      interface: vlanif12
+      description: 'appServer GATEWAY'
+      provider: '{{ cli }}'
 
-    - name: 为SVI 12分配IP地址
-      ce_ip_interface:
-        interface:  Vlanif12
-        version: v4
-        state: present
-        addr: 192.168.2.254
-        mask: 24
-        provider: '{{ cli }}'
+  - name: 为SVI 12分配IP地址
+    ce_ip_interface:
+      interface:  Vlanif12
+      version: v4
+      state: present
+      addr: 192.168.2.254
+      mask: '24'
+      provider: '{{ cli }}'

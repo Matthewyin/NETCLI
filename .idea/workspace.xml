@@ -1,49 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/library/comware_command.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/library/comware_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/library/comware_vlan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/spine01.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/H3C_build_push/vlan.yml" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/configs/diffs/hp3.diff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/configs/diffs/hp4.diff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/configs/hp3.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/configs/hp4.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/group_vars/netcliSwitch.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/host_vars/leaf01.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/host_vars/leaf02.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/host_vars/spine01.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/hosts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/install_configs.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/library/comware_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/library/comware_ipinterface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/library/comware_switchport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/library/comware_vlan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/sw-vlans.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/templates/leaf.j2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/switch_test/hp-ansible/templates/spine.j2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/configs/diffs/hp3.diff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/configs/diffs/hp4.diff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/configs/hp3.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/configs/hp4.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/group_vars/netcliSwitch.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/host_vars/leaf01.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/host_vars/leaf02.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/host_vars/spine01.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/hosts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/install_configs.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/library/comware_interface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/library/comware_ipinterface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/library/comware_switchport.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/library/comware_vlan.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/sw-vlans.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/templates/leaf.j2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/switch_test/hp_ansible/templates/spine.j2" beforeDir="false" />
->>>>>>> c1c0a97b3eaaffe31c69edb2321f3b12841bee9c
+    <list default="true" id="9193e54a-cc6b-48d9-805e-310e1d8f5818" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/switch_test/integration_test/1-1-2-trunkInterface.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/integration_test/1-1-1-createVlan.yml" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/integration_test/1-1-1-createVlan.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,71 +17,15 @@
       <executable />
     </execution>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="netcli" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JsBowerSettings">
-    <node-interpreter value="project" />
-    <exe-path />
-    <config-path />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>false</service-enabled>
-    <exe-path />
-    <annotation-enable>false</annotation-enable>
-    <other-services-enabled>false</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
-  <component name="ProjectId" id="1OzkRycBaWWnDWOqGdkYxdmAXC3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1R0rUX41N5BDf88aGrNp4mMphRO" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/switch/H3C_build_push/templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/switch" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -134,258 +39,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="14d4c137-fa3c-4bbc-948c-9299be224d9d" name="Default Changelist" comment="" />
-      <created>1564987808156</created>
+      <changelist id="9193e54a-cc6b-48d9-805e-310e1d8f5818" name="Default Changelist" comment="" />
+      <created>1568814870572</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1564987808156</updated>
-      <workItem from="1564987809662" duration="21784000" />
-      <workItem from="1565259771973" duration="450000" />
-      <workItem from="1565260855023" duration="13965000" />
-      <workItem from="1565484740341" duration="4630000" />
-      <workItem from="1565505895800" duration="355000" />
-      <workItem from="1565506272247" duration="10692000" />
-      <workItem from="1565572208684" duration="4790000" />
-      <workItem from="1565774343924" duration="5517000" />
-      <workItem from="1565948255640" duration="208000" />
-<<<<<<< HEAD
-      <workItem from="1565948631757" duration="4477000" />
-=======
-      <workItem from="1565948631757" duration="1126000" />
-      <workItem from="1566089273575" duration="188000" />
-      <workItem from="1566091056569" duration="6232000" />
-      <workItem from="1566146687893" duration="482000" />
-      <workItem from="1566183538963" duration="2725000" />
-      <workItem from="1566216572670" duration="3143000" />
->>>>>>> c1c0a97b3eaaffe31c69edb2321f3b12841bee9c
+      <updated>1568814870572</updated>
+      <workItem from="1568814874646" duration="4404000" />
     </task>
-    <task id="LOCAL-00001" summary="增加注释说明">
-      <created>1565417826440</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1565417826440</updated>
-    </task>
-    <task id="LOCAL-00002" summary="增加注释说明">
-      <created>1565536225753</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1565536225753</updated>
-    </task>
-    <task id="LOCAL-00003" summary="增加注释说明">
-      <created>1565538546049</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1565538546049</updated>
-    </task>
-    <task id="LOCAL-00004" summary="增加注释说明">
-      <created>1565659511177</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1565659511177</updated>
-    </task>
-    <task id="LOCAL-00005" summary="增加注释说明">
-      <created>1565674302003</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1565674302003</updated>
-    </task>
-    <task id="LOCAL-00006" summary="增加注释说明">
-      <created>1565773745656</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1565773745656</updated>
-    </task>
-    <task id="LOCAL-00007" summary="新增一层实验室交换机hosts">
-      <created>1565940822841</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1565940822841</updated>
-    </task>
-    <task id="LOCAL-00008" summary="新增一层实验室交换机hosts">
-      <created>1565942745736</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1565942745736</updated>
-    </task>
-    <task id="LOCAL-00009" summary="新增一层实验室交换机hosts">
-      <created>1565943518755</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1565943518755</updated>
-    </task>
-    <task id="LOCAL-00010" summary="新增一层实验室交换机hosts">
-      <created>1565946114763</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1565946114763</updated>
-    </task>
-    <task id="LOCAL-00011" summary="新增一层实验室交换机hosts">
-      <created>1565946136912</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1565946136912</updated>
-    </task>
-    <task id="LOCAL-00012" summary="新增一层实验室交换机hosts">
-      <created>1565946333243</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1565946333243</updated>
-    </task>
-    <task id="LOCAL-00013" summary="g更新一层实验室交换机hosts">
-      <created>1565947019591</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1565947019591</updated>
-    </task>
-    <task id="LOCAL-00014" summary="更新一层实验室交换机hosts&#10;区分host_vars和group_vars">
-      <created>1565947766205</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1565947766205</updated>
-    </task>
-    <task id="LOCAL-00015" summary="更新一层实验室交换机hosts&#10;区分host_vars和group_vars">
-      <created>1565947871288</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1565947871288</updated>
-    </task>
-    <task id="LOCAL-00016" summary="switch_test目录整理">
-      <created>1565949554800</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1565949554801</updated>
-    </task>
-    <task id="LOCAL-00017" summary="creat switch vlan yml file">
-      <created>1566091944412</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1566091944412</updated>
-    </task>
-    <task id="LOCAL-00018" summary="creat switch ansible modules">
-      <created>1566092995590</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1566092995590</updated>
-    </task>
-    <task id="LOCAL-00019" summary="change directorys">
-      <created>1566093666033</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1566093666033</updated>
-    </task>
-    <task id="LOCAL-00020" summary="teaching install the pyhpecw7 package">
-      <created>1566145764898</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1566145764898</updated>
-    </task>
-    <task id="LOCAL-00021" summary="teaching install the pyhpecw7 package">
-      <created>1566145963607</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1566145963607</updated>
-    </task>
-    <task id="LOCAL-00022" summary="teaching install the pyhpecw7 package">
-      <created>1566147123490</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1566147123490</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Install ansible">
-      <created>1566217534704</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1566217534704</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Install ansible">
-      <created>1566217630609</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1566217630609</updated>
-    </task>
-    <task id="LOCAL-00025" summary="collect docs to same directory">
-      <created>1566217827984</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1566217827984</updated>
-    </task>
-    <task id="LOCAL-00026" summary="ansible install doc">
-      <created>1566219139359</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1566219139359</updated>
-    </task>
-    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,28 +61,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="增加注释说明" />
-    <MESSAGE value="新增一层实验室交换机hosts" />
-    <MESSAGE value="g更新一层实验室交换机hosts" />
-    <MESSAGE value="更新一层实验室交换机hosts&#10;区分host_vars和group_vars" />
-    <MESSAGE value="switch_test目录整理" />
-    <MESSAGE value="creat switch vlan yml file" />
-    <MESSAGE value="creat switch ansible modules" />
-    <MESSAGE value="change directorys" />
-    <MESSAGE value="teaching install the pyhpecw7 package" />
-    <MESSAGE value="Install ansible" />
-    <MESSAGE value="collect docs to same directory" />
-    <MESSAGE value="ansible install doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="ansible install doc" />
   </component>
 </project>
