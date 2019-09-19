@@ -1,0 +1,42 @@
+---
+
+- name: 1-1-4-createLayer3Interface：创建3层网络接口，并配置IP地址
+  hosts: gateway
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ ansible_ssh_host }}"
+      port: "{{ ansible_ssh_port }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      transport: cli
+
+  tasks:
+
+    - name: 显示交换机的硬件及版本信息
+      ce_command:
+        commands: display version
+        provider:  "{{ cli }}"
+
+    - name: 为10GE1/0/44创建保留VLAN
+      ce_config:
+        lines: vlan reserved for main-interface 4000 to  4050
+        match: exact
+        provider: "{{ cli }}"
+
+    - name: 创建10GE1/0/44为layer3接口，并配置IP地址
+      ce_interface:
+        interface: 10GE1/0/44
+        description: 'Configured by Ansible'
+        mode: layer3
+        provider: '{{ cli }}'
+
+    - name: 为10GE1/0/44配置IP地址192.168.99.1/24
+      ce_ip_interface:
+        interface:  10GE1/0/44
+        version: v4
+        state: present
+        addr: 192.168.99.1
+        mask: '24'
+        provider: '{{ cli }}'
