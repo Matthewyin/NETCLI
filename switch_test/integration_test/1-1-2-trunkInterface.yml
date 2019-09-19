@@ -13,9 +13,16 @@
       transport: cli
 
   tasks:
-   - name: 配置与Tor互联的40G1/0/1接口为trunk，允许vlan10-12的流量
+   - name: 配置与Tor互联的port-channel 100接口为trunk，允许vlan10-12的流量
      ce_switchport:
-        interface: 40GE1/0/1
+        interface: 'Eth-Trunk 100'
+        mode: trunk
+        trunk_vlans: 10-12
+        provider: '{{ cli }}'
+
+   - name: 配置互联的10G1/0/20接口为trunk，允许vlan10-12的流量
+     ce_switchport:
+        interface: '10GE1/0/20'
         mode: trunk
         trunk_vlans: 10-12
         provider: '{{ cli }}'

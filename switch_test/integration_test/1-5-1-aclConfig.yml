@@ -15,25 +15,33 @@
   tasks:
 
     #创建高级ACL，name: to_webServer,允许外部用户访问192.168.0.10:443
-    - name: '创建并配置高级ACL，允许外部用户访问web服务器的443端口'
-      ce_acl_advance:
-        state:  present
-        acl_name: 'to_webServer'
-        acl_step: '8'
-        rule_name: 'to_ssl'
-        rule_id:  '110'
-        rule_action:  permit
-        protocol:  tcp
-        dest_ip: '192.168.0.10'
-        dest_mask: '32'
-        dest_port_op: eq
-        dest_port_begin: '443'
-        provider: "{{ cli }}"
+     - name: '创建并配置高级ACL，允许外部用户访问web服务器的443端口'
+       ce_acl_advance:
+          state:  present
+          acl_name: 'to_webServer'
+          acl_step: '8'
+          rule_name: 'to_ssl'
+          rule_id:  '110'
+          rule_action:  permit
+          protocol:  tcp
+          dest_ip: '192.168.0.10'
+          dest_mask: '32'
+          dest_port_op: eq
+          dest_port_begin: '443'
+          provider: "{{ cli }}"
 
+    #将ACL应用在用户入口
+     - name: '将to_webServer应用在T1/0/45'
+       ce_acl_interface:
+         state: present
+         acl_name: 'to_webServer'
+         interface: '10GE1/0/45'
+         direction: 'inbound'
+         provider: "{{ cli }}"
 
     #创建高级ACL，name：to_appServer,允许web01和web02访问192.168.2.11:8080
-    - name: '创建并配置高级ACL，允许web01和web02访问192.168.2.11:8080'
-      ce_acl_advance:
+     - name: '创建并配置高级ACL，允许web01和web02访问192.168.2.11:8080'
+       ce_acl_advance:
         state:  present
         acl_name: 'to_appServer'
         acl_step: '8'
@@ -49,8 +57,8 @@
         dest_port_begin: '8080'
         provider: "{{ cli }}"
 
-    - name: '创建并配置高级ACL，允许web02问192.168.2.11:8080'
-      ce_acl_advance:
+     - name: '创建并配置高级ACL，允许web02问192.168.2.11:8080'
+       ce_acl_advance:
         state:  present
         acl_name: 'to_appServer'
         acl_step: '8'
@@ -65,3 +73,13 @@
         dest_port_op: eq
         dest_port_begin: '8080'
         provider: "{{ cli }}"
+
+
+   #将ACL应用在APP Server入口
+     - name: '将to_appServer应用在SVI12'
+       ce_acl_interface:
+         state: present
+         acl_name: 'to_appServer'
+         interface: 'Vlanif12'
+         direction: 'inbound'
+         provider: "{{ cli }}"
