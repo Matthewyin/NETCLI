@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9193e54a-cc6b-48d9-805e-310e1d8f5818" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/switch_test/integration_test/1-1-6-createLoopbackInterface" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/switch_test/integration_test/1-3-devicesBaseConfiguration.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/integration_test/1-1-2-trunkInterface.yml" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/integration_test/1-1-2-createTrunkInterface.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/integration_test/1-1-6-createLoopbackInterface" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/integration_test/1-1-6-createLoopbackInterface" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +52,7 @@
       <updated>1568814870572</updated>
       <workItem from="1568814874646" duration="5037000" />
       <workItem from="1568897059419" duration="4371000" />
-      <workItem from="1568984420948" duration="3207000" />
+      <workItem from="1568984420948" duration="6617000" />
     </task>
     <task id="LOCAL-00001" summary="新建playbook">
       <created>1568819957088</created>
@@ -100,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568989905342</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="更新loopback接口测试脚本">
+      <created>1568990167009</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1568990167009</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +135,7 @@
     <MESSAGE value="update host vars" />
     <MESSAGE value="新增子接口测试脚本" />
     <MESSAGE value="更新子接口测试脚本" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新子接口测试脚本" />
+    <MESSAGE value="更新loopback接口测试脚本" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新loopback接口测试脚本" />
   </component>
 </project>
