@@ -1,0 +1,28 @@
+---
+
+- name: 1-1-6-createLoopbackInterface：创建loopback0接口，并配置IP地址
+  hosts: gateway
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ ansible_ssh_host }}"
+      port: "{{ ansible_ssh_port }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      transport: cli
+
+  tasks:
+
+    - name: 创建loopback0
+      ce_interface:
+        interface: loopback0
+        description: 'outside user'
+        provider: '{{ cli }}'
+
+    - name: loopback0配置IP地址
+      ce_ip_interface:
+        interface: loopback0
+        addr: 10.1.1.1
+        mask: 32
+        provider: '{{ cli }}'
