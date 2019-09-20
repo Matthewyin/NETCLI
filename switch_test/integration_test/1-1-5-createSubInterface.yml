@@ -1,6 +1,6 @@
 ---
 
-- name: 1-1-4-createLayer3Interface：创建3层网络接口，并配置IP地址
+- name: 1-1-5-createSubInterface：创建3层网络接口，并配置IP地址
   hosts: gateway
   connection: local
   gather_facts: no
@@ -14,5 +14,37 @@
 
   tasks:
 
-    - name: 显示交换机的硬件及版本信息
+    - name: 创建10GE1/0/43为layer3接口，并配置IP地址
       ce_interface:
+        interface: 10GE1/0/43
+        description: 'Configured by Ansible'
+        mode: layer3
+        provider: '{{ cli }}'
+
+    - name: 创建子接口10GE1/0/43.9
+      ce_interface:
+        interface: 10GE1/0/43.9
+        description: 'Create sub-Interface'
+        provider: '{{ cli }}'
+
+    - name: 创建10GE1/0/42.10为layer2接口
+      ce_interface:
+        interface: 10GE1/0/42.10
+        description: 'Configured by Ansible'
+        l2sub: true
+        provider: '{{ cli }}'
+
+    - name: 将10GE1/0/42.10封装为vlan10
+      ce_config:
+        lines: encapsulation dot1q vid 10
+        before: interface 10g1/0/43.10
+        provider: '{{ cli }}'
+
+    - name: 为10GE1/0/43.9分配IP地址
+      ce_ip_interface:
+        interface: 10GE1/0/43.9
+        version: v4
+        state: present
+        addr: 20.20.20.20
+        mask: '24'
+        provider: '{{ cli }}'
