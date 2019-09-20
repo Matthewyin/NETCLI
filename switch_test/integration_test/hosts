@@ -4,8 +4,8 @@
 gateway    ansible_host=172.20.13.30
 tor        ansible_host=172.20.13.149
 
-[netcli:vars]
-ansible_connection=local
-ansible_ssh_port=22
-ansible_user=admin123
-ansible_password=1qaz@WSX
+#[netcli:vars]
+#ansible_connection=local
+#ansible_ssh_port=22
+#ansible_user=admin123
+#ansible_password=1qaz@WSX

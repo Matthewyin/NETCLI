@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9193e54a-cc6b-48d9-805e-310e1d8f5818" name="Default Changelist" comment="" />
+    <list default="true" id="9193e54a-cc6b-48d9-805e-310e1d8f5818" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/switch_test/integration_test/host_vars/gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/integration_test/hosts" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/integration_test/hosts" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +51,7 @@
       <updated>1568814870572</updated>
       <workItem from="1568814874646" duration="5037000" />
       <workItem from="1568897059419" duration="4371000" />
+      <workItem from="1568984420948" duration="347000" />
     </task>
     <task id="LOCAL-00001" summary="新建playbook">
       <created>1568819957088</created>
