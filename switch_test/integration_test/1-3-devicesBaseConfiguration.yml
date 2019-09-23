@@ -98,8 +98,9 @@
        trap_time_stamp: formatdate_millisecond
        provider: '{{ cli }}'
 
-
-  - name: 配置保存
-
-  - name: 配置回滚
-
+  - name: 保存配置
+    ce_config:
+      lines:
+        - save
+      match: exact
+      provider: '{{ cli }}'
