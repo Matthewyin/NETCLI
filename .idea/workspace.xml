@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9193e54a-cc6b-48d9-805e-310e1d8f5818" name="Default Changelist" comment="" />
+    <list default="true" id="9193e54a-cc6b-48d9-805e-310e1d8f5818" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/switch_test/ce-ansible/initConfiguration.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/integration_test/1-1-6-createLoopbackInterface" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/integration_test/1-1-6-createLoopbackInterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/integration_test/1-3-devicesBaseConfiguration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/switch_test/integration_test/1-3-devicesBaseConfiguration.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switch_test/run_playbook.mp4" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,10 +22,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1R0rUX41N5BDf88aGrNp4mMphRO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -48,6 +61,7 @@
       <workItem from="1568814874646" duration="5037000" />
       <workItem from="1568897059419" duration="4371000" />
       <workItem from="1568984420948" duration="6842000" />
+      <workItem from="1569219200676" duration="5519000" />
     </task>
     <task id="LOCAL-00001" summary="新建playbook">
       <created>1568819957088</created>
@@ -132,6 +146,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="新建playbook" />
     <MESSAGE value="update playbook" />
     <MESSAGE value="update host vars" />

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e0cddf49-d062-428e-813a-1a1bfb9e5f06" name="172.20.13.186_ansible" url="http://172.20.13.186">
-        <fileTransfer host="172.20.13.186" port="22" accessType="SFTP">
+      <webServer id="e0cddf49-d062-428e-813a-1a1bfb9e5f06" name="172.20.13.35_ansible" url="http://172.20.13.35">
+        <fileTransfer host="172.20.13.35" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
