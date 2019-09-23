@@ -26,3 +26,16 @@
         addr: 10.1.1.1
         mask: '32'
         provider: '{{ cli }}'
+
+    - name: 创建loopback1
+      ce_interface:
+        interface: loopback1
+        description: 'Source IP'
+        provider: '{{ cli }}'
+
+    - name: loopback1配置IP地址
+      ce_ip_interface:
+        interface: loopback1
+        addr: 1.1.1.1
+        mask: '32'
+        provider: '{{ cli }}'

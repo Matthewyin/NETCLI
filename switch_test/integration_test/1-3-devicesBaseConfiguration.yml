@@ -20,9 +20,6 @@
       is_preferred: enable
       provider: "{{ cli }}"
 
-
-  - name: 配置syslog
-
   - name: 配置snmp服务器、通知类型
     ce_snmp_target_host:
       state:  present
@@ -64,6 +61,43 @@
 
 
   - name: 配置netflow
+    ce_sflow:
+      agent_ip: 1.1.1.1
+      collector_id: '1'
+      collector_ip: 192.168.0.99
+      provider: '{{ cli }}'
+
+
+  - name: 配置info-center服务
+    ce_info_center_global:
+       info_center_enable: 'true'
+       is_default_vpn: 'true'
+       state: present
+       level: warning
+       ip_type: ipv4
+       server_ip: 192.168.0.99
+       source_ip: 1.1.1.1
+       provider: '{{ cli }}'
+
+
+  - name: 配置syslog服务
+    ce_info_center_log:
+       log_buff_enable: 'true'
+       log_enable: 'true'
+       state: present
+       log_level: warning
+       log_time_stamp: formatdate_millisecond
+       provider: '{{ cli }}'
+
+  - name: 配置syslog-trap服务
+    ce_info_center_trap:
+       trap_buff_enable: 'true'
+       trap_enable: 'true'
+       state: present
+       trap_level: warning
+       trap_time_stamp: formatdate_millisecond
+       provider: '{{ cli }}'
+
 
   - name: 配置保存
 
