@@ -1,0 +1,23 @@
+---
+
+- name: 2-3-deviceBaseConfiguration：交换机的基本配置
+  hosts: tor
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ ansible_ssh_host }}"
+      port: "{{ ansible_ssh_port }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      transport: cli
+
+  tasks:
+    - name: 配置NTP
+      comware_command:
+        command:
+          - ntp-service enable
+          - ntp-service refclock-master 2
+          - ntp-service unicast-server 192.168.0.99
+        type: config
+        transport: cli

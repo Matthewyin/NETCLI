@@ -1,0 +1,6 @@
+---
+
+ansible_connection: local
+ansible_ssh_port: 22
+ansible_user: cslc
+ansible_password: cslc@123
