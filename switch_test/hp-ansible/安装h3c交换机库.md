@@ -109,7 +109,13 @@
 > HPACTION = "http://www.h3c.com/netconf/action:1.0"
 > HPACTION_C = '{' + HPACTION + '}' 
 
-7. 安装独立的Python虚拟化环境(可选)
+8. 安装H3C ansible modules
+> git clone https://github.com/HPENetworking/ansible-hpe-cw7.git  
+> mkdir /usr/lib/python2.7/site-packages/ansible/modules/network/h3c  
+> 将H3C的ansible模块复制到ansible目录：  
+> cp library/* /usr/lib/python2.7/site-packages/ansible/modules/network/h3c
+
+9. 安装独立的Python虚拟化环境(可选)
 
 Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多环境并存。
 >```
@@ -126,8 +132,7 @@ Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多�
 > Successfully installed virtualenv-16.7.2
 
  
-
-8. 创建虚拟化将目录（可选）
+10. 创建虚拟化将目录（可选）
 >```
 > virtualenv /testPython3/ansible
 > 
@@ -136,7 +141,7 @@ Virtualenv是在工作目录中虚拟完整的Python环境来实现多Python多�
 > (ansible) [root@Ansible ~]#
  
 
-9. Ansible主要目录及文件
+11. Ansible主要目录及文件
 >```
 > 配置文件：/etc/ansible/ansible.cfg，包含inventory主机信息配置、ansible工具功能配置
 > 
