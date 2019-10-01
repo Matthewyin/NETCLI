@@ -7,7 +7,7 @@
 
     tasks:
 
-      - name: passing in config commands as a list
+      - name: 配置NTP服务
         comware_command:
           command:
             - ntp-service enable
@@ -17,4 +17,11 @@
           username: "{{ ansible_user }}"
           password: "{{ ansible_password }}"
           hostname: "{{ ansible_host }}"
+
+      - name: 配置syslog服务
+        comware_command:
+          command:
+            - info-center enable
+            - info-center source default console deny
+            - info-center source ftp console level warning
 
