@@ -1,0 +1,68 @@
+---
+
+- name: 2-1-1-creatVlan：创建VLAN,SVI接口及IP地址
+  hosts: tor
+  gather_facts: no
+  connection: local
+
+  tasks:
+    #1,将交换机接口10G1/0/45置于routed模式
+    #2,配置接口参数
+    #3,配置IP地址
+    - name: 创建10GE1/0/45为layer3接口，并配置IP地址
+      comware_interface:
+        name: Ten-GigabitEthernet1/0/45
+        type: routed
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 创建10GE1/0/45为layer3接口，并配置IP地址
+      comware_interface:
+        name: Ten-GigabitEthernet1/0/45
+        admin: down
+        description: 'Configured by Ansible'
+        duplex: full
+        speed: '1000'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 为10GE1/0/45配置IP地址192.168.99.2/24
+      comware_ipinterface:
+        name: Ten-GigabitEthernet1/0/45
+        version: v4
+        addr: 192.168.99.2
+        mask: 255.255.255.0
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+
+    - name: 配置10G1/0/46的接口参数
+      comware_interface:
+        name: Ten-GigabitEthernet1/0/46
+        admin: up
+        description: 'Configured by Ansible'
+        duplex: full
+        speed: '1000'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 配置10G1/0/47的接口参数
+      comware_interface:
+        name: Ten-GigabitEthernet1/0/47
+        admin: up
+        description: 'Configured by Ansible'
+        duplex: full
+        speed: '1000'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 配置10G1/0/48的接口参数
+      comware_interface:
+        name: Ten-GigabitEthernet1/0/48
+        admin: up
+        description: 'Configured by Ansible'
+        duplex: full
+        speed: '1000'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
