@@ -1,0 +1,40 @@
+---
+- name: 2-1-2-trunkInterface：Gateway与Tor之间trunk互联
+  hosts: tor
+  gather_facts: no
+  connection: local
+
+  tasks:
+    - name: 配置互联的PortChannel 100接口为trunk，允许vlan10-14的流量
+      comware_switchport:
+        name: Bridge-Aggregation100
+        link_type: trunk
+        permitted_vlans: '11-14'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+
+    - name: 配置互联的10G1/0/46接口为trunk
+      comware_switchport:
+        name: Ten-GigabitEthernet1/0/46
+        link_type: trunk
+        permitted_vlans: '1-4094'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 配置互联的10G1/0/47接口为trunk
+      comware_switchport:
+        name: Ten-GigabitEthernet1/0/47
+        link_type: trunk
+        permitted_vlans: '1-4094'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 配置互联的10G1/0/48接口为trunk
+      comware_switchport:
+        name: Ten-GigabitEthernet1/0/48
+        link_type: trunk
+        permitted_vlans: '1-4094'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"

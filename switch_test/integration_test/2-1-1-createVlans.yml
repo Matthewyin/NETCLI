@@ -1,0 +1,26 @@
+---
+- name: 2-1-1-creatVlan：创建VLAN,SVI接口及IP地址
+  hosts: tor
+  gather_facts: no
+  connection: local
+
+  tasks:
+
+    - name: 创建VLAN10
+      comware_vlan:
+        vlanid: 10
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 创建VLAN11
+      comware_vlan:
+        vlanid: 11
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 创建VLAN12
+      comware_vlan:
+        vlanid: 12
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
