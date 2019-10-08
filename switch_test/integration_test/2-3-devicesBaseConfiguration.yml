@@ -18,10 +18,52 @@
           password: "{{ ansible_password }}"
           hostname: "{{ ansible_host }}"
 
+
       - name: 配置syslog服务
         comware_command:
           command:
             - info-center enable
-            - info-center source default console deny
-            - info-center source ftp console level warning
+            - info-center loghost 192.168.0.99 facility local4
+          type: config
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+          hostname: "{{ ansible_host }}"
 
+
+      - name: 配置SNMP服务
+        comware_command:
+          command:
+            - snmp-agent
+            - snmp-agent community read cslc_snmp
+            - snmp-agent sys-info version v2c v3
+          type: config
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+          hostname: "{{ ansible_host }}"
+
+     #由于H3C设备使用netconf，需要在设备上预先做好相关的netconf配置，所以不能使用ansible进行netconf部分的配置下发
+
+      - name: 配置LLDP
+        comware_command:
+          command:
+            - lldp global enable
+          type: config
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+          hostname: "{{ ansible_host }}"
+
+      - name: 配置sFlow
+        comware_command:
+          command:
+            - sflow agent ip 1.1.1.2
+            - sflow collector 1 ip 192.168.0.99 description netflow-server
+          type: config
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+          hostname: "{{ ansible_host }}"
+
+      - name: 保存配置
+        comware_save:
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+          hostname: "{{ ansible_host }}"
