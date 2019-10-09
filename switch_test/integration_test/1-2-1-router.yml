@@ -26,8 +26,6 @@
       ce_ospf:
         process_id: 100
         area: 0
-
-
-
-
+        addr: 1.1.1.1
+        mask: 32
         provider: "{{ cli }}"
