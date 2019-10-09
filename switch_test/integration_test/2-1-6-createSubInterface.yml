@@ -1,0 +1,40 @@
+---
+
+- name: 2-1-5-createLoopbackInterface：创建3层网络接口，并配置IP地址
+  hosts: tor
+  gather_facts: no
+  connection: local
+
+  tasks:
+
+    - name: 创建loopback0
+      comware_interface:
+        name: loopback0
+        description: 'OSPF-Route-ID'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: 创建loopback1
+      comware_interface:
+        name: loopback1
+        description: 'BGP-Route-ID'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+
+    - name: loopback0分配IP地址
+      comware_ipinterface:
+        name: loopback0
+        addr: 10.1.1.2
+        mask: 255.255.255.255
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+    - name: loopback1分配IP地址
+      comware_ipinterface:
+        name: loopback1
+        addr: 2.2.2.2
+        mask: 255.255.255.255
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"

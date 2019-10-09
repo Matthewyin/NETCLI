@@ -1,0 +1,33 @@
+---
+
+- name: 1-2-1-路由配置下发
+  hosts: gateway
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ ansible_ssh_host }}"
+      port: "{{ ansible_ssh_port }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      transport: cli
+
+  tasks:
+
+    - name: 创建静态路由
+      ce_static_route:
+        prefix: 1.1.1.2
+        mask: 32
+        next_hop: 192.168.3.253
+        aftype: v4
+        provider: "{{ cli }}"
+
+    - name: OSPF配置下发
+      ce_ospf:
+        process_id: 100
+        area: 0
+
+
+
+
+        provider: "{{ cli }}"
