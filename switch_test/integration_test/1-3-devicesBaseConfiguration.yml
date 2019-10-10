@@ -62,9 +62,9 @@
 
   - name: 配置netflow
     ce_sflow:
-      agent_ip: 1.1.1.1
+      agent_ip: 1.1.1.1             #local IP, display in log, marks the device which send the sflow
       collector_id: '1'
-      collector_ip: 192.168.0.99
+      collector_ip: 192.168.0.99    #sflow server IP, to collect and process sflow informations
       provider: '{{ cli }}'
 
 

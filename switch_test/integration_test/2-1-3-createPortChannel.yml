@@ -12,7 +12,8 @@
         members:
           - FortyGigE1/0/51
         type: bridged
-        mode: static
+        lacp_mode: active
+        mode: dynamic
         username: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
         hostname: "{{ ansible_host }}"
