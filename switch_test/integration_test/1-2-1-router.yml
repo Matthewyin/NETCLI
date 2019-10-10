@@ -1,6 +1,6 @@
 ---
 
-- name: 1-2-1-路由配置下发
+- name: 1-2-1-routeStatic：测试静态路由
   hosts: gateway
   connection: local
   gather_facts: no
@@ -17,15 +17,32 @@
     - name: 创建静态路由
       ce_static_route:
         prefix: 1.1.1.2
-        mask: 32
+        mask: '32'
         next_hop: 192.168.3.253
         aftype: v4
         provider: "{{ cli }}"
 
-    - name: OSPF配置下发
+    - name: 发布OSPF网段
       ce_ospf:
-        process_id: 100
-        area: 0
-        addr: 1.1.1.1
-        mask: 32
+        process_id: '100'
+        area: '0'
+        addr: 192.168.99.0
+        mask: '24'
         provider: "{{ cli }}"
+    - name: OSPF参数
+      ce_ospf_vrf:
+        ospf: '100'
+        route_id: 1.1.1.1
+        bandwidth: '40000'
+        provider: "{{ cli }}"
+    - name: add OSPF parameters to interface
+      ce_config:
+        lines: ospf network-type p2p
+        parents: interface 10GE1/0/43.9
+        match: exact
+        provider: "{{ cli }}"
+
+
+    - name: 创建BGP进程
+      ce_bgp:
+        as_number: '65512'
