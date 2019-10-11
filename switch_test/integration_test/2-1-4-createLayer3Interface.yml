@@ -66,3 +66,20 @@
         username: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
         hostname: "{{ ansible_host }}"
+
+    - name: Create interface VLAN 10
+      comware_interface:
+        name: Vlan-interface10
+        description: 'OSPF'
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
+
+    - name: configure ip address to interface VLAN 10
+      comware_ipinterface:
+        name: Vlan-interface10
+        addr: 192.168.0.253
+        mask: 255.255.255.0
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"

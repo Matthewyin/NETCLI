@@ -1,6 +1,6 @@
 ---
 
-- name: 1-2-1-routeStatic：路由协议测试
+- name: 1-2-1-testRouteProtocols：路由协议测试
   hosts: gateway
   connection: local
   gather_facts: no
@@ -18,7 +18,7 @@
       ce_static_route:
         prefix: 1.1.1.2
         mask: '32'
-        next_hop: 192.168.3.253
+        next_hop: 192.168.0.253
         aftype: v4
         provider: "{{ cli }}"
 
@@ -35,6 +35,7 @@
         route_id: 1.1.1.1
         bandwidth: '40000'
         provider: "{{ cli }}"
+    # ansible doesn't provide this module，must use CLI to achieve this feature。
     - name: add OSPF parameters to interface
       ce_config:
         lines: ospf network-type p2p
@@ -45,3 +46,34 @@
     - name: create BGP process
       ce_bgp:
         as_number: '65512'
+        vrf_name: '_public_'
+        router_id: 1.1.1.1
+        provider: "{{ cli }}"
+    - name: config BGP parameters in AddressFamily
+      ce_bgp_af:
+        af_type: ipv4uni
+        network_address: 1.1.1.1
+        mask_len: '32'
+        vrf_name: '_public_'
+        provider: "{{ cli }}"
+    - name: config BGP peer with local switch
+      ce_bgp_neighbor:
+        peer_addr: 1.1.1.2
+        remote_as: '65512'
+        local_if_name: loopback0
+        vrf_name: '_public_'
+        provider: "{{ cli }}"
+    - name: config BGP peer parameters in AddressFamily
+      ce_bgp_neighbor_af:
+        af_type: ipv4uni
+        remote_address: 1.1.1.2
+        nexthop_configure: local
+        vrf_name: '_public_'
+        provider: "{{ cli }}"
+    - name: disable send ipv4 unicast in BGP
+      ce_config:
+        parents: 'bgp 65512'
+        lines:
+          - undo default ipv4-unicast
+        match: exact
+        provider: '{{ cli }}'

@@ -9,7 +9,7 @@
       comware_switchport:
         name: Bridge-Aggregation100
         link_type: trunk
-        permitted_vlans: '11-14'
+        permitted_vlans: '10-14'
         username: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
         hostname: "{{ ansible_host }}"
