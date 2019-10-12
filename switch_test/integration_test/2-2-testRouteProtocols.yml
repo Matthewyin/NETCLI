@@ -1,87 +1,49 @@
 ---
 
-- name: 1-2-1-testRouteProtocols：路由协议测试
-  hosts: gateway
-  connection: local
+- name: test route protocols
+  hosts: tor
   gather_facts: no
-  vars:
-    cli:
-      host: "{{ ansible_ssh_host }}"
-      port: "{{ ansible_ssh_port }}"
-      username: "{{ ansible_user }}"
-      password: "{{ ansible_password }}"
-      transport: cli
+  connection: local
 
   tasks:
 
-    - name: create static routes
-      ce_static_route:
-        prefix: 1.1.1.2
-        mask: '32'
-        next_hop: 192.168.0.253
-        aftype: v4
-        provider: "{{ cli }}"
+    - name: test static route to Gateway loopback1
+      comware_command:
+        command:
+          -  ip route-static 1.1.1.1 255.255.255.255 192.168.0.254
+        type: config
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
 
-    - name: network the OSPF subnets
-      ce_ospf:
-        process_id: '100'
-        area: '0'
-        addr: 192.168.99.0
-        mask: '24'
-        provider: "{{ cli }}"
-    - name: OSPF parameters
-      ce_ospf_vrf:
-        ospf: '100'
-        route_id: 1.1.1.1
-        bandwidth: '40000'
-        provider: "{{ cli }}"
-    # ansible doesn't provide this module，must use CLI to achieve this feature。
-    - name: add OSPF parameters to interface
-      ce_config:
-        lines: ospf network-type p2p
-        parents: interface 10GE1/0/43.9
-        match: exact
-        provider: "{{ cli }}"
+    - name: make Gateway to OSPF neighbor in OSPF process 100
+      comware_command:
+        command:
+          - ospf 100 router-id 1.1.1.2
+          -  bandwidth-reference 40000
+          -  area 0.0.0.0
+          -  network 1.1.1.2 0.0.0.0
+          -  network 192.168.0.0 0.0.0.255
+          - interface vlan10
+          -  ospf network-type p2p
+        type: config
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
 
-    - name: create BGP process
-      ce_bgp:
-        as_number: '65512'
-        vrf_name: '_public_'
-        router_id: 1.1.1.1
-        provider: "{{ cli }}"
-    - name: config BGP parameters in AddressFamily
-      ce_bgp_af:
-        af_type: ipv4uni
-        network_address: 1.1.1.1
-        mask_len: '32'
-        vrf_name: '_public_'
-        provider: "{{ cli }}"
-    - name: config BGP peer with local switch
-      ce_bgp_neighbor:
-        peer_addr: 1.1.1.2
-        remote_as: '65512'
-        local_if_name: loopback0
-        vrf_name: '_public_'
-        provider: "{{ cli }}"
-    - name: config BGP peer parameters in AddressFamily
-      ce_bgp_neighbor_af:
-        af_type: ipv4uni
-        remote_address: 1.1.1.2
-        nexthop_configure: local
-        vrf_name: '_public_'
-        provider: "{{ cli }}"
-    - name: disable send ipv4 unicast in BGP
-      ce_config:
-        parents: 'bgp 65512'
-        lines:
-          - undo default ipv4-unicast
-        match: exact
-        provider: '{{ cli }}'
-    - name: disable BGP synchronization
-      ce_config:
-        parents: 'bgp 65512,ipv4-family unicast'
-        lines:
-        # -  undo synchronization
-          - network 20.20.20.0 255.255.255.0
-        match: exact
-        provider: '{{ cli }}'
+
+    - name: make Gateway to iBGP neighbor in BGP AS 65512
+      comware_command:
+        command:
+          - bgp 65512
+          - router-id 1.1.1.2
+          - peer 1.1.1.1 as-number 65512
+          - peer 1.1.1.1 connect-interface LoopBack0
+          - address-family ipv4 unicast
+          - network 10.1.1.2 255.255.255.255
+          - peer 1.1.1.1 enable
+          - peer 1.1.1.1 next-hop-local
+        type: config
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        hostname: "{{ ansible_host }}"
