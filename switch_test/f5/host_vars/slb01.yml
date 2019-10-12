@@ -1,0 +1,8 @@
+---
+
+ansible_connection: local
+ansible_ssh_port: 22
+ansible_user: root
+ansible_password: zaq1XSW@
+ui_uname: admin
+ui_pass: zaq1XSW@
