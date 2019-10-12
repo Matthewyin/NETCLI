@@ -19,4 +19,5 @@
       bigip_device_ntp:
         ntp_servers:
           - 192.168.0.99
+        timezone: Asia/Shanghai
       delegate_to: localhost
