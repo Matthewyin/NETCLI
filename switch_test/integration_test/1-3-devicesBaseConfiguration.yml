@@ -19,6 +19,12 @@
       source_int: loopback0
       is_preferred: enable
       provider: "{{ cli }}"
+  - name: configure clock timezone as BEIJING
+    ce_config:
+      lines:
+        - clock timezone BeiJing add 8
+      match: exact
+      provider: '{{ cli }}'
 
   - name: 配置snmp服务器、通知类型
     ce_snmp_target_host:
