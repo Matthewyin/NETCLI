@@ -1,0 +1,22 @@
+---
+
+- name: Do Basic configuration
+  hosts: slb
+  gather_facts: false
+  connection: local
+
+  environment:
+    F5_SERVER: "{{ ansible_host }}"
+    F5_USER: "admin"
+    F5_PASSWORD: "zaq1XSW@"
+    F5_VALIDATE_CERTS: "false"
+    F5_SERVER_PORT: 443
+
+
+  tasks:
+
+    - name: Configure NTP on the BIG-IP
+      bigip_device_ntp:
+        ntp_servers:
+          - 192.168.0.99
+      delegate_to: localhost
