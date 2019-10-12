@@ -77,3 +77,11 @@
           - undo default ipv4-unicast
         match: exact
         provider: '{{ cli }}'
+    - name: disable BGP synchronization
+      ce_config:
+        parents: 'bgp 65512,ipv4-family unicast'
+        lines:
+        # -  undo synchronization
+          - network 20.20.20.0 255.255.255.0
+        match: exact
+        provider: '{{ cli }}'
