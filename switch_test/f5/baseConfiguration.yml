@@ -1,7 +1,7 @@
 ---
 
 - name: Do Basic configuration
-  hosts: slb
+  hosts: slb01
   gather_facts: false
   connection: local
 
@@ -15,9 +15,72 @@
 
   tasks:
 
-    - name: Configure NTP on the BIG-IP
-      bigip_device_ntp:
+  - name: Configure NTP on the BIG-IP
+    bigip_device_ntp:
         ntp_servers:
-          - 192.168.0.99
+           - 192.168.0.99
         timezone: Asia/Shanghai
-      delegate_to: localhost
+    delegate_to: localhost
+
+  - name: Configure DNS on the BIG-IP
+    bigip_device_dns:
+        name_servers:
+           - 192.168.0.99
+    delegate_to: localhost
+
+  - name: Add a remote syslog server to log to
+    bigip_remote_syslog:
+        remote_host: 192.168.0.99
+    delegate_to: localhost
+
+  - name: Create an SMNP v2c read-only community
+    bigip_snmp_community:
+        name: my_snmp
+        version: v2c
+        community: f5@cslc
+        access: ro
+    delegate_to: localhost
+
+
+  - name: Configure VLANs on the BIG-IP
+    bigip_vlan:
+        name: "{{ item.name }}"
+     #   tag: "{{ item.tag }}"
+     #   tagged_interface: "{{ item.interface }}"
+        untagged_interface: "{{ item.interface }}"
+    with_items:
+        - name: 'SSL-Vlan'
+     #     tag: '10'
+          interface: '1.1'
+        - name: 'WEB-Vlan'
+     #     tag: '11'
+          interface: '1.2'
+        - name: 'APP-Vlan'
+     #     tag: '12'
+          interface: '1.3'
+    delegate_to: localhost
+
+  - name: Configure SELF-IPs on the BIG-IP
+    bigip_selfip:
+        name: "{{ item.name }}"
+        address: "{{ item.address }}"
+        netmask: "{{ item.netmask }}"
+        vlan: "{{ item.vlan }}"
+        allow_service: "{{item.allow_service}}"
+    with_items:
+        - name: 'SSL-IP'
+          address: '192.168.0.252'
+          netmask: '255.255.255.0'
+          vlan: 'SSL-Vlan'
+          allow_service: 'default'
+        - name: 'WEB-IP'
+          address: '192.168.1.252'
+          netmask: '255.255.255.0'
+          vlan: 'WEB-Vlan'
+          allow_service: 'default'
+        - name: 'APP-IP'
+          address: '192.168.2.252'
+          netmask: '255.255.255.0'
+          vlan: 'APP-Vlan'
+          allow_service: 'default'
+    delegate_to: localhost

@@ -1,0 +1,154 @@
+---
+- name: Do Basic configuration
+  hosts: slb01
+  gather_facts: false
+  connection: local
+
+  environment:
+    F5_SERVER: "{{ ansible_host }}"
+    F5_USER: "admin"
+    F5_PASSWORD: "zaq1XSW@"
+    F5_VALIDATE_CERTS: "false"
+    F5_SERVER_PORT: 443
+
+
+  tasks:
+
+    - name: Create SSL pool
+      bigip_pool:
+        state: "present"
+        name: "ssl_pool"
+        partition: "Common"
+        lb_method: "round-robin"
+        monitors:
+          - /Common/tcp
+      delegate_to: localhost
+
+    - name: Add SSL pool members
+      bigip_pool_member:
+        state: "present"
+        pool: "ssl_pool"
+        description: "ssl pool"
+        host: "{{ item.host }}"
+        name: "{{ item.name }}"
+        port: "{{ item.port }}"
+      with_items:
+        - name: 'ssl01'
+          host: '192.168.0.11'
+          port: '443'
+        - name: 'ssl02'
+          host: '192.168.0.12'
+          port: '443'
+      delegate_to: localhost
+
+    - name: Create web pool
+      bigip_pool:
+        state: "present"
+        name: "web_pool"
+        partition: "Common"
+        lb_method: "round-robin"
+        monitors:
+          - /Common/tcp
+      delegate_to: localhost
+
+    - name: Add pool members
+      bigip_pool_member:
+        state: "present"
+        pool: "web_pool"
+        description: "web pool"
+        host: "{{ item.host }}"
+        name: "{{ item.name }}"
+        port: "{{ item.port }}"
+      with_items:
+        - name: 'web01'
+          host: '192.168.1.11'
+          port: '80'
+        - name: 'web02'
+          host: '192.168.1.12'
+          port: '80'
+      delegate_to: localhost
+
+
+    - name: Create app pool
+      bigip_pool:
+        state: "present"
+        name: "app_pool"
+        partition: "Common"
+        lb_method: "round-robin"
+        monitors:
+          - /Common/tcp
+      delegate_to: localhost
+
+    - name: Add pool members
+      bigip_pool_member:
+        state: "present"
+        pool: "app_pool"
+        description: "app pool"
+        host: "{{ item.host }}"
+        name: "{{ item.name }}"
+        port: "{{ item.port }}"
+      with_items:
+        - name: 'app01'
+          host: '192.168.2.11'
+          port: '80'
+      delegate_to: localhost
+
+    - name: Add the SNAT pool 'sslSNATPool'
+      bigip_snat_pool:
+        name: sslSnatPool
+        state: present
+        members:
+          - 192.168.0.8
+          - 192.168.0.9
+      delegate_to: localhost
+
+    - name: Add the SNAT pool 'webSNATPool'
+      bigip_snat_pool:
+        name: webSnatPool
+        state: present
+        members:
+          - 192.168.1.8
+          - 192.168.1.9
+      delegate_to: localhost
+
+    - name: Add the SNAT pool 'appSNATPool'
+      bigip_snat_pool:
+        name: appSnatPool
+        state: present
+        members:
+          - 192.168.2.8
+          - 192.168.2.9
+      delegate_to: localhost
+
+    - name: Create an http virtual server
+      bigip_virtual_server:
+        state: "present"
+        partition: "Common"
+        name: "SSL_VS"
+        destination: "192.168.0.10"
+        port: "80"
+        pool: "ssl_pool"
+        snat: "sslSnatPool"
+      delegate_to: localhost
+
+
+    - name: Create an http virtual server
+      bigip_virtual_server:
+        state: "present"
+        partition: "Common"
+        name: "web_VS"
+        destination: "192.168.1.10"
+        port: "80"
+        pool: "web_pool"
+        snat: "webSnatPool"
+      delegate_to: localhost
+
+    - name: Create an http virtual server
+      bigip_virtual_server:
+        state: "present"
+        partition: "Common"
+        name: "app_VS"
+        destination: "192.168.2.10"
+        port: "80"
+        pool: "app_pool"
+      delegate_to: localhost

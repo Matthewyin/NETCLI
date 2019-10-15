@@ -1,2 +1,2 @@
 [slb]
-slb01 ansible_host=172.20.13.188
+slb01 ansible_host=172.20.13.31
