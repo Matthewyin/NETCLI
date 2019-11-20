@@ -1,7 +1,6 @@
 1.  安装Python3.7（在根目录下）
 >```
-> [root@host]#yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make
-> [root@host]#yum install libffi-devel -y
+> [root@host]#yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel wget vim gcc-c++ mysql-devel python-devel
 > [root@host]#wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
 > 
 > [root@host]#tar -zxvf Python-3.7.0.tgz
@@ -11,12 +10,12 @@
 > [root@host]#./configure --prefix=/usr/local/python3
 > 
 > [root@host]#make && make install
+> [root@ansible Python-3.7.0]# mv /usr/bin/python /usr/bin/python.bak
+> [root@ansible Python-3.7.0]# ln -s /usr/local/python3/bin/python3.7 /usr/bin/python
 > [root@host]#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 > [root@host]#python get-pip.py
-> [root@ansible Python-3.7.0]# mv /usr/bin/python /usr/bin/python.bak
 > [root@ansible Python-3.7.0]# mv /usr/bin/pip /usr/bin/pip.bak
 > [root@ansible Python-3.7.0]# ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip
-> [root@ansible Python-3.7.0]# ln -s /usr/local/python3/bin/python3.7 /usr/bin/python
 
 2. 安装pip
 >```
